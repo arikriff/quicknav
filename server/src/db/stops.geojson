@@ -1,0 +1,628 @@
+{
+  "type": "FeatureCollection",
+  "name": "stops",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+    }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "stop_id": 221,
+        "stop_name": "משרד החוץ/שד' רבין"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.202207,
+          31.782889
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stop_id": 279,
+        "stop_name": "פרבשטיין/בית הדפוס"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.192338,
+          31.78599
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stop_id": 800,
+        "stop_name": "בנייני האומה/הנשיא השישי"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.203701,
+          31.78634
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stop_id": 988,
+        "stop_name": "קרית משה/שדרות הרצל"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.196995,
+          31.785802
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stop_id": 989,
+        "stop_name": "קרית משה/שדרות הרצל"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.197227,
+          31.785735
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stop_id": 990,
+        "stop_name": "קרית משה/שד' המאירי"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.194187,
+          31.786311
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stop_id": 991,
+        "stop_name": "קרית משה/שד' המאירי"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.194325,
+          31.786182
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stop_id": 1589,
+        "stop_name": "תחנת רק''ל יפה נוף"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.185059,
+          31.776787
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stop_id": 1733,
+        "stop_name": "החלוץ/רבי בנימין"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.192657,
+          31.781264
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stop_id": 1734,
+        "stop_name": "החלוץ"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.190224,
+          31.779467
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stop_id": 1735,
+        "stop_name": "פרבשטיין/בית הדפוס"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.192593,
+          31.786081
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stop_id": 2023,
+        "stop_name": "החלוץ/המייסדים"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.190824,
+          31.777446
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stop_id": 2025,
+        "stop_name": "המייסדים"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.187713,
+          31.778141
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stop_id": 2782,
+        "stop_name": "בי''ח שערי צדק/בייט"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.185437,
+          31.775096
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stop_id": 3273,
+        "stop_name": "משה קול/פלומבו"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.190365,
+          31.770618
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stop_id": 3274,
+        "stop_name": "משה קול/דינור"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.19167,
+          31.768861
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stop_id": 3275,
+        "stop_name": "משה קול/מרה"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.192666,
+          31.770868
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stop_id": 3277,
+        "stop_name": "משה קול/שרייבוים"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.192513,
+          31.771926
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stop_id": 3278,
+        "stop_name": "משה קול/שרייבום"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.192373,
+          31.77206
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stop_id": 3281,
+        "stop_name": "משה קול/מרה"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.192584,
+          31.770693
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stop_id": 3282,
+        "stop_name": "משה קול/דינור"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.191388,
+          31.76913
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stop_id": 3283,
+        "stop_name": "משה קול/תוסיה כהן"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.19007,
+          31.771527
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stop_id": 3286,
+        "stop_name": "מרכז מסחרי/אביזוהר"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.186959,
+          31.774634
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stop_id": 3333,
+        "stop_name": "משה קול/תוסיה כהן"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.189683,
+          31.772108
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stop_id": 386,
+        "stop_name": "יוחאי בן נון"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.190099,
+          31.772823
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stop_id": 3374,
+        "stop_name": "ביטוח לאומי"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.200768,
+          31.784519
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stop_id": 3375,
+        "stop_name": "חניון הלאום/שד' הנשיא השישי"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.203037,
+          31.783139
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stop_id": 3519,
+        "stop_name": "החלוץ/גפני"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.189433,
+          31.776013
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stop_id": 4216,
+        "stop_name": "גשר המיתרים/שד' הרצל"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.199532,
+          31.787171
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stop_id": 5929,
+        "stop_name": "מכללה להנדסה ירושלים"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.194157,
+          31.771176
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stop_id": 5943,
+        "stop_name": "תחנת רקל''ה החלוץ/פרבשטיין"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.191835,
+          31.783365
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stop_id": 5980,
+        "stop_name": "תחנת רכבת קלה ככר דניה/שד' הרצל"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.18865,
+          31.780884
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stop_id": 6003,
+        "stop_name": "תחנת רכבת קלה החלוץ/שד' הרצל"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.191205,
+          31.782661
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stop_id": 6092,
+        "stop_name": "יוחאי בן נון"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.190869,
+          31.77288
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stop_id": 9898,
+        "stop_name": "עמירם סיוון/ניסן הרפז"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.191867,
+          31.774247
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stop_id": 9989,
+        "stop_name": "גבעת בית הכרם"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.189469,
+          31.774895
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stop_id": 9900,
+        "stop_name": "החלוץ/המייסדים"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.190595,
+          31.776628
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stop_id": 9901,
+        "stop_name": "המייסדים"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.187799,
+          31.778028
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stop_id": 9978,
+        "stop_name": "גבעת בית הכרם"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.189476,
+          31.774801
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stop_id": 9991,
+        "stop_name": "עמירם סיוון/ניסן הרפז"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.191479,
+          31.774255
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stop_id": 6244,
+        "stop_name": "תחנת רקל''ה החלוץ/פרבשטיין"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.191922,
+          31.783033
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stop_id": 6307,
+        "stop_name": "עמירם סיוון/יעקב שריבוים"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.19355,
+          31.77311
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stop_id": 386,
+        "stop_name": "עמירם סיוון/יעקוב שריבוים"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.193651,
+          31.773139
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stop_id": 463,
+        "stop_name": "בנייני האומה/שדרות שז''ר"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.203367,
+          31.787718
+        ]
+      }
+    }
+  ]
+}
