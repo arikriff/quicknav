@@ -6,10 +6,95 @@
  * @flow strict-local
  */
 
-import React from 'react';
+import React from 'react'
+import DataErrorScreen from './components/screens/DataErrorScreen'
+import JourneyPlanningScreen from './components/screens/JourneyPlanningScreen'
+import StopListScreen from './components/screens/StopListScreen'
+import { NavigationContainer } from '@react-navigation/native'
+import { createNativeStackNavigator } from '@react-navigation/native-stack'
 
-const App = () => (
+const fs = require('fs')
+
+const App = () => {
   
-)
+  const Stack = createNativeStackNavigator()
+
+  const isErr = false
+  
+  try {
+
+    fs.readFile('../server/src/db/line.json', 'utf8', (err, lineJsonString) => {
+
+      if (err) {
+        console.log('Error read JSON file:', err)
+        throw err
+      }
+
+      fs.readFile('../server/src/db/route.geojson', 'utf8', (err, routeGeojsonString) => {
+
+        if (err) {
+          console.log('Error read JSON file:', err)
+          throw err
+        }
+
+        fs.readFile('../server/src/db/stops.geojson', 'utf8', (err, stopsGeojsonString) => {
+
+          if (err) {
+            console.log('Error read JSON file:', err)
+            throw err
+          }
+          
+          try {
+            const DATA = {}
+
+            DATA.line = JSON.parse(lineJsonString)
+            DATA.route = JSON.parse(routeGeojsonString)
+            DATA.stops = JSON.parse(stopsGeojsonString)
+
+          }
+
+          catch {
+            console.log('Error parsing JSON string:', err)
+            throw err
+          }
+        })
+      })
+    })
+  }
+
+  catch (err) {
+    isErr = true
+  }
+
+  return (
+    <NavigationContainer>
+      {
+        isErr ?
+        (
+          <Stack.Navigator>
+            <Stack.Screen
+              name='DataError'
+              component={DataErrorScreen}
+              options={{title: 'שגיאה'}}
+            />
+          </Stack.Navigator>
+        ) :
+        (
+          <Stack.Navigator>
+            <Stack.Screen
+              name='JourneyPlanning'
+              component={JourneyPlanningScreen}
+              options={{title: 'תכנון מסלול'}}
+            />
+            <Stack.Screen
+              name='StopList'
+              component={StopListScreen}
+            />
+          </Stack.Navigator>
+        )
+      }
+    </NavigationContainer>
+  )
+}
 
 export default App;

@@ -6,20 +6,16 @@ import {Column} from '../helpers/Container'
 import JourneyEdgesSection from '../helpers/JourneyEdgesSection'
 import styles from '../styles'
 	
-export default () => (
+export default ({data}) => (
 	<Column>
-		<TouchableOpacity>
-			<Icon name='settings'/>
-		</TouchableOpacity>
-		<MapView
-			style={styles.map}
-			initialRegion={{
-				latitude: 37.78825,
-				longitude: -122.4324,
-				latitudeDelta: 0.0922,
-				longitudeDelta: 0.0421,
-			}}
-		/>
+		<MapView>
+			<Geojson
+				geojson={data.route}
+			/>
+			<Geojson
+				geojson={data.stops}
+			/>
+		</MapView>
 		<JourneyEdgesSection/>
 	</Column>
 )
