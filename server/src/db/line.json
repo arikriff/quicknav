@@ -18,8 +18,9 @@
       "name": "משה קול/שרייבום",
       "plannedTime": "00:01:00",
       "duration": {
-        "morning": "00:00:00",
-        "afternoon": "00:00:00"
+        "morning": "00:01:00",
+        "afternoon": "00:00:00",
+        "evening": "00:00:00"
       },
       "use": {
         "college": false,
@@ -32,8 +33,8 @@
       "name": "משה קול/מרה",
       "plannedTime": "00:02:00",
       "duration": {
-        "morning": "00:00:00",
-        "afternoon": "00:00:00"
+        "morning": "00:01:00",
+        "afternoon": "00:01:00"
       },
       "use": {
         "college": false,
@@ -46,8 +47,8 @@
       "name": "משה קול/דינור",
       "plannedTime": "00:03:00",
       "duration": {
-        "morning": "00:00:00",
-        "afternoon": "00:00:00"
+        "morning": "00:01:00",
+        "afternoon": "00:01:00"
       },
       "use": {
         "college": false,
@@ -60,8 +61,8 @@
       "name": "משה קול/תוסיה כהן",
       "plannedTime": "00:04:00",
       "duration": {
-        "morning": "00:00:00",
-        "afternoon": "00:00:00"
+        "morning": "00:01:00",
+        "afternoon": "00:01:00"
       },
       "use": {
         "college": false,
@@ -74,8 +75,8 @@
       "name": "יוחאי בן נון",
       "plannedTime": "00:05:00",
       "duration": {
-        "morning": "00:00:00",
-        "afternoon": "00:00:00"
+        "morning": "00:01:00",
+        "afternoon": "00:01:00"
       },
       "use": {
         "college": false,
@@ -88,8 +89,8 @@
       "name": "עמירם סיוון/יעקוב שריבוים",
       "plannedTime": "00:07:00",
       "duration": {
-        "morning": "00:00:00",
-        "afternoon": "00:00:00"
+        "morning": "00:02:00",
+        "afternoon": "00:01:00"
       },
       "use": {
         "college": false,
@@ -102,8 +103,8 @@
       "name": "עמירם סיוון/ניסן הרפז",
       "plannedTime": "00:08:00",
       "duration": {
-        "morning": "00:00:00",
-        "afternoon": "00:00:00"
+        "morning": "00:01:00",
+        "afternoon": "00:01:00"
       },
       "use": {
         "college": false,
@@ -116,8 +117,8 @@
       "name": "גבעת בית הכרם",
       "plannedTime": "00:09:00",
       "duration": {
-        "morning": "00:00:00",
-        "afternoon": "00:00:00"
+        "morning": "00:01:00",
+        "afternoon": "00:01:00"
       },
       "use": {
         "college": false,
@@ -130,8 +131,8 @@
       "name": "החלוץ/המייסדים",
       "plannedTime": "00:10:00",
       "duration": {
-        "morning": "00:00:00",
-        "afternoon": "00:00:00"
+        "morning": "00:01:00",
+        "afternoon": "00:01:00"
       },
       "use": {
         "college": false,
@@ -144,8 +145,8 @@
       "name": "המייסדים",
       "plannedTime": "00:11:00",
       "duration": {
-        "morning": "00:00:00",
-        "afternoon": "00:00:00"
+        "morning": "00:01:00",
+        "afternoon": "00:01:00"
       },
       "use": {
         "college": false,
@@ -158,8 +159,8 @@
       "name": "תחנת רכבת קלה ככר דניה/שד' הרצל",
       "plannedTime": "00:13:00",
       "duration": {
-        "morning": "00:00:00",
-        "afternoon": "00:00:00"
+        "morning": "00:02:00",
+        "afternoon": "00:01:00"
       },
       "use": {
         "college": false,
@@ -172,8 +173,8 @@
       "name": "תחנת רכבת קלה החלוץ/שד' הרצל",
       "plannedTime": "00:14:00",
       "duration": {
-        "morning": "00:00:00",
-        "afternoon": "00:00:00"
+        "morning": "00:02:00",
+        "afternoon": "00:01:00"
       },
       "use": {
         "college": false,
@@ -186,8 +187,8 @@
       "name": "תחנת רק\"לה החלוץ/פרבשטיין",
       "plannedTime": "00:15:00",
       "duration": {
-        "morning": "00:00:00",
-        "afternoon": "00:00:00"
+        "morning": "00:02:00",
+        "afternoon": "00:01:00"
       },
       "use": {
         "college": false,
@@ -200,8 +201,8 @@
       "name": "פרבשטיין/בית הדפוס",
       "plannedTime": "00:16:00",
       "duration": {
-        "morning": "00:00:00",
-        "afternoon": "00:00:00"
+        "morning": "00:04:00",
+        "afternoon": "00:04:00"
       },
       "use": {
         "college": false,
@@ -214,8 +215,8 @@
       "name": "קרית משה/שד' המאירי",
       "plannedTime": "00:17:00",
       "duration": {
-        "morning": "00:00:00",
-        "afternoon": "00:00:00"
+        "morning": "00:01:00",
+        "afternoon": "00:01:00"
       },
       "use": {
         "college": false,
@@ -228,8 +229,8 @@
       "name": "קרית משה/שדרות הרצל",
       "plannedTime": "00:17:00",
       "duration": {
-        "morning": "00:00:00",
-        "afternoon": "00:00:00"
+        "morning": "00:02:00",
+        "afternoon": "00:02:00"
       },
       "use": {
         "college": false,
@@ -242,8 +243,8 @@
       "name": "ביטוח לאומי",
       "plannedTime": "00:19:00",
       "duration": {
-        "morning": "00:00:00",
-        "afternoon": "00:00:00"
+        "morning": "00:04:00",
+        "afternoon": "00:04:00"
       },
       "use": {
         "college": false,
@@ -256,8 +257,8 @@
       "name": "גשר המיתרים/שד' הרצל",
       "plannedTime": "00:21:00",
       "duration": {
-        "morning": "00:00:00",
-        "afternoon": "00:00:00"
+        "morning": "00:03:00",
+        "afternoon": "00:03:00"
       },
       "use": {
         "college": false,
@@ -270,8 +271,8 @@
       "name": "בנייני האומה/שדרות שז\"ר",
       "plannedTime": "00:22:00",
       "duration": {
-        "morning": "00:00:00",
-        "afternoon": "00:00:00"
+        "morning": "00:03:00",
+        "afternoon": "00:03:00"
       },
       "use": {
         "college": false,
@@ -284,8 +285,8 @@
       "name": "בנייני האומה/הנשיא השישי",
       "plannedTime": "00:23:00",
       "duration": {
-        "morning": "00:00:00",
-        "afternoon": "00:00:00"
+        "morning": "00:01:00",
+        "afternoon": "00:02:00"
       },
       "use": {
         "college": false,
@@ -298,8 +299,8 @@
       "name": "חניון הלאום/שד' הנשיא השישי",
       "plannedTime": "00:24:00",
       "duration": {
-        "morning": "00:00:00",
-        "afternoon": "00:00:00"
+        "morning": "00:01:00",
+        "afternoon": "00:01:00"
       },
       "use": {
         "college": false,
@@ -312,8 +313,8 @@
       "name": "משרד החוץ/שד' רבין",
       "plannedTime": "00:25:00",
       "duration": {
-        "morning": "00:00:00",
-        "afternoon": "00:00:00"
+        "morning": "00:01:00",
+        "afternoon": "00:02:00"
       },
       "use": {
         "college": false,
@@ -326,8 +327,8 @@
       "name": "קרית משה/שדרות הרצל",
       "plannedTime": "00:27:00",
       "duration": {
-        "morning": "00:00:00",
-        "afternoon": "00:00:00"
+        "morning": "00:05:00",
+        "afternoon": "00:05:00"
       },
       "use": {
         "college": false,
@@ -340,8 +341,8 @@
       "name": "קרית משה/שד' המאירי",
       "plannedTime": "00:27:00",
       "duration": {
-        "morning": "00:00:00",
-        "afternoon": "00:00:00"
+        "morning": "00:04:00",
+        "afternoon": "00:01:00"
       },
       "use": {
         "college": false,
@@ -354,8 +355,8 @@
       "name": "פרבשטיין/בית הדפוס",
       "plannedTime": "00:28:00",
       "duration": {
-        "morning": "00:00:00",
-        "afternoon": "00:00:00"
+        "morning": "00:02:00",
+        "afternoon": "00:02:00"
       },
       "use": {
         "college": false,
@@ -368,8 +369,8 @@
       "name": "תחנת רק\"לה החלוץ/פרבשטיין",
       "plannedTime": "00:29:00",
       "duration": {
-        "morning": "00:00:00",
-        "afternoon": "00:00:00"
+        "morning": "00:03:00",
+        "afternoon": "00:02:00"
       },
       "use": {
         "college": false,
@@ -382,8 +383,8 @@
       "name": "החלוץ/רבי בנימין",
       "plannedTime": "00:30:00",
       "duration": {
-        "morning": "00:00:00",
-        "afternoon": "00:00:00"
+        "morning": "00:01:00",
+        "afternoon": "00:01:00"
       },
       "use": {
         "college": false,
@@ -396,8 +397,8 @@
       "name": "החלוץ",
       "plannedTime": "00:32:00",
       "duration": {
-        "morning": "00:00:00",
-        "afternoon": "00:00:00"
+        "morning": "00:01:00",
+        "afternoon": "00:01:00"
       },
       "use": {
         "college": false,
@@ -410,8 +411,8 @@
       "name": "החלוץ/המייסדים",
       "plannedTime": "00:33:00",
       "duration": {
-        "morning": "00:00:00",
-        "afternoon": "00:00:00"
+        "morning": "00:01:00",
+        "afternoon": "00:01:00"
       },
       "use": {
         "college": false,
@@ -438,8 +439,8 @@
       "name": "מרכז מסחרי/אביזוהר",
       "plannedTime": "00:35:00",
       "duration": {
-        "morning": "00:00:00",
-        "afternoon": "00:00:00"
+        "morning": "00:01:00",
+        "afternoon": "00:02:00"
       },
       "use": {
         "college": false,
@@ -452,8 +453,8 @@
       "name": "בי\"ח שערי צדק/בייט",
       "plannedTime": "00:35:00",
       "duration": {
-        "morning": "00:00:00",
-        "afternoon": "00:00:00"
+        "morning": "00:02:00",
+        "afternoon": "00:01:00"
       },
       "use": {
         "college": false,
@@ -466,8 +467,8 @@
       "name": "תחנת רק\"ל יפה נוף",
       "plannedTime": "00:36:00",
       "duration": {
-        "morning": "00:00:00",
-        "afternoon": "00:00:00"
+        "morning": "00:01:00",
+        "afternoon": "00:02:00"
       },
       "use": {
         "college": false,
@@ -480,8 +481,8 @@
       "name": "המייסדים",
       "plannedTime": "00:38:00",
       "duration": {
-        "morning": "00:00:00",
-        "afternoon": "00:00:00"
+        "morning": "00:02:00",
+        "afternoon": "00:01:00"
       },
       "use": {
         "college": false,
@@ -494,8 +495,8 @@
       "name": "החלוץ/גפני",
       "plannedTime": "00:40:00",
       "duration": {
-        "morning": "00:00:00",
-        "afternoon": "00:00:00"
+        "morning": "00:02:00",
+        "afternoon": "00:01:00"
       },
       "use": {
         "college": false,
@@ -508,8 +509,8 @@
       "name": "גבעת בית הכרם",
       "plannedTime": "00:41:00",
       "duration": {
-        "morning": "00:00:00",
-        "afternoon": "00:00:00"
+        "morning": "00:01:00",
+        "afternoon": "00:01:00"
       },
       "use": {
         "college": false,
@@ -522,8 +523,8 @@
       "name": "עמירם סיוון/ניסן הרפז",
       "plannedTime": "00:42:00",
       "duration": {
-        "morning": "00:00:00",
-        "afternoon": "00:00:00"
+        "morning": "00:01:00",
+        "afternoon": "00:01:00"
       },
       "use": {
         "college": false,
@@ -536,8 +537,8 @@
       "name": "עמירם סיוון/יעקב שריבוים",
       "plannedTime": "00:43:00",
       "duration": {
-        "morning": "00:00:00",
-        "afternoon": "00:00:00"
+        "morning": "00:01:00",
+        "afternoon": "00:01:00"
       },
       "use": {
         "college": false,
@@ -550,8 +551,8 @@
       "name": "יוחאי בן נון",
       "plannedTime": "00:44:00",
       "duration": {
-        "morning": "00:00:00",
-        "afternoon": "00:00:00"
+        "morning": "00:01:00",
+        "afternoon": "00:01:00"
       },
       "use": {
         "college": false,
@@ -564,8 +565,8 @@
       "name": "משה קול/תוסיה כהן",
       "plannedTime": "00:45:00",
       "duration": {
-        "morning": "00:00:00",
-        "afternoon": "00:00:00"
+        "morning": "00:01:00",
+        "afternoon": "00:01:00"
       },
       "use": {
         "college": false,
@@ -578,8 +579,8 @@
       "name": "משה קול/פלומבו",
       "plannedTime": "00:46:00",
       "duration": {
-        "morning": "00:00:00",
-        "afternoon": "00:00:00"
+        "morning": "00:01:00",
+        "afternoon": "00:01:00"
       },
       "use": {
         "college": false,
@@ -592,8 +593,8 @@
       "name": "משה קול/דינור",
       "plannedTime": "00:47:00",
       "duration": {
-        "morning": "00:00:00",
-        "afternoon": "00:00:00"
+        "morning": "00:01:00",
+        "afternoon": "00:01:00"
       },
       "use": {
         "college": false,
@@ -606,8 +607,8 @@
       "name": "משה קול/מרה",
       "plannedTime": "00:48:00",
       "duration": {
-        "morning": "00:00:00",
-        "afternoon": "00:00:00"
+        "morning": "00:01:00",
+        "afternoon": "00:01:00"
       },
       "use": {
         "college": false,
@@ -620,8 +621,8 @@
       "name": "משה קול/שרייבוים",
       "plannedTime": "00:48:00",
       "duration": {
-        "morning": "00:00:00",
-        "afternoon": "00:00:00"
+        "morning": "00:01:00",
+        "afternoon": "00:01:00"
       },
       "use": {
         "college": false,
@@ -634,8 +635,8 @@
       "name": "מכללה להנדסה ירושלים",
       "plannedTime": "00:51:00",
       "duration": {
-        "morning": "00:00:00",
-        "afternoon": "00:00:00"
+        "morning": "00:02:00",
+        "afternoon": "00:02:00"
       },
       "use": {
         "college": true,
