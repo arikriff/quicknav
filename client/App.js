@@ -18,7 +18,6 @@ const fs = require('fs')
 const App = () => {
   
   const Stack = createNativeStackNavigator()
-
   const isErr = false
   
   try {
@@ -84,7 +83,10 @@ const App = () => {
             <Stack.Screen
               name='JourneyPlanning'
               component={JourneyPlanningScreen}
-              options={{title: 'תכנון מסלול'}}
+              options={{
+                title: 'תכנון מסלול',
+                data: DATA
+              }}
             />
             <Stack.Screen
               name='StopList'
