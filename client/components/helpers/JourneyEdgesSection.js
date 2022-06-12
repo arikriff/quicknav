@@ -5,13 +5,15 @@ import {Row, Column} from './Container'
 import AlignedTextInput from './AlignedTextInput'
 import styles from '../styles'
 
-export default ({origin, destination}) => (
+export default props => (
 	<Column>
 		<Row style={[styles.journeyEdgesRow]}>
 			<AlignedTextInput
 				placeholder='מהיכן נוסעים?'
-				defaultValue={origin ? origin : undefined}
-				
+				defaultValue={props.origin ? props.origin : undefined}
+				onPressIn={() => {
+					
+				}}
 				style={styles.journeyEdgesPaddedInput}
 			/>
 			<TouchableOpacity style={styles.container}>
@@ -27,7 +29,7 @@ export default ({origin, destination}) => (
 		<Row style={[styles.journeyEdgesRow]}>
 			<AlignedTextInput
 				placeholder='לאן נוסעים?'
-				defaultValue={destination ? destination : undefined}
+				defaultValue={props.destination ? props.destination : undefined}
 			/>
 		</Row>
 	</Column>

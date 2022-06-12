@@ -4,11 +4,14 @@ import { Column, Row } from '../helpers/Container';
 
 export default props => (
   <FlatList
-    data={props.data}
+    data={props.stops}
     renderItem={item => (
       <TouchableOpacity
         onPress={() => {
-          props.navigation.navigate('JourneyPlanning', {stopId: item.id})
+          props.navigation.navigate('JourneyPlanning', {
+            stopId: item.id,
+            toCollege: props.toCollege
+          })
         }}
       >
         <Column>
