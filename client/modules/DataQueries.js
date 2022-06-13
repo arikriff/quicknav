@@ -1,46 +1,66 @@
 
-const findStopFromLine = (line, id) => (
-	line.stops.find(stop => stop.id == id)
+const getStopFeature = (id, stopFeatures) => (
+	stopFeatures.find(stop => stop.properties.id == id)
 )
 	
-const findStopFromStops = (stopFeatures, id) => (
-  stopFeatures.find(stop => stop.properties.stop_id == id)
+const getStopInLine = (id, lineStops) => (
+  lineStops.filter(stop => stop.id == id)
 )
 
-const getStopNameById = (stopFeatures, id) => (
-  findStopFromStops(stopFeatures, id).properties.stop_name
+const getCollegeStopInLine = lineStops => (
+  lineStops.filter(stop => stop.use.college)
 )
 
-const findCollegeStopName = (line, stopFeatures) => {
-	const collegeStop = line.stops.find(stop => stop.use.college)
-	return getStopNameById(stopFeatures, collegeStop.id)
-}
+const getStopData = (stopInLine, stopFeature) => {
 
-const getStopDataById = (id, lineStops, stopFeatureData) => {
+  const stopsInTrip = []
 
-  const stopFeature = stopFeatureData.find(stop => stop.properties.id == id)
-  const stopInLine = lineStops.filter(stop => stop.id == id)
+  stopInLine.forEach(stop => {
 
-  const stopData = {
-    id: id,
+    stopsInTrip.push({
+
+      duration: stop.duration,
+
+      use: {
+        origin: stop.use.origin,
+        destination: stop.use.destination
+      }
+    })
+  })
+
+  return {
+    id: stopFeature.id,
     name: stopFeature.properties.name,
     geometry: stopFeature.geometry,
-    plannedTime: stopInLine
-      "duration": null,
-      "use": {
-        "college": true,
-        "origin": true,
-        "destination": false
-      }
-
-
-
+    college: stopInLine[0].use.college,
+    stopsInTrip: stopsInTrip
   }
+
+}
+
+const getStopDataById = (id, lineStops, stopFeatures) => {
+
+  const stopInLine = getStopInLine(id, lineStops)
+  const stopFeature = getStopFeature(id, stopFeatures)
+
+  return getStopData(stopInLine, stopFeature)
+
+}
+
+const getCollegeStopData = (lineStops, stopFeatures) => {
+
+  const stopInLine = getCollegeStopInLine(lineStops)
+  const stopFeature = getStopFeature(stopInLine.id, stopFeatures)
+
+  return getStopData(stopInLine, stopFeature)
+  
 }
 
 export {
-  findStopFromLine,
-  findStopFromStops,
-  getStopNameById,
-  findCollegeStopName
+  getStopFeature,
+  getStopInLine,
+  getCollegeStopInLine,
+  getStopData,
+  getStopDataById,
+  getCollegeStopData
 }

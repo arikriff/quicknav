@@ -12,14 +12,8 @@ export default props => {
 	
 	useEffect(() => {
 
-		if (props.direction !== undefined) {
-
-			if (props.journeyStop == null || props.journeyStop.id != journeyStop.id) {
-				setJourneyStop({
-					id: props.journeyStop.id
-					
-				})
-			}
+		if (props.direction !== undefined && props.journeyStop != null) {
+			const 
 		}
 
 
