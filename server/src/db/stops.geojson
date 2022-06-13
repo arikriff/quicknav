@@ -11,8 +11,8 @@
     {
       "type": "Feature",
       "properties": {
-        "stop_id": 221,
-        "stop_name": "משרד החוץ/שד' רבין"
+        "id": 221,
+        "name": "משרד החוץ/שד' רבין"
       },
       "geometry": {
         "type": "Point",
@@ -25,8 +25,8 @@
     {
       "type": "Feature",
       "properties": {
-        "stop_id": 279,
-        "stop_name": "פרבשטיין/בית הדפוס"
+        "id": 279,
+        "name": "פרבשטיין/בית הדפוס"
       },
       "geometry": {
         "type": "Point",
@@ -39,8 +39,8 @@
     {
       "type": "Feature",
       "properties": {
-        "stop_id": 800,
-        "stop_name": "בנייני האומה/הנשיא השישי"
+        "id": 800,
+        "name": "בנייני האומה/הנשיא השישי"
       },
       "geometry": {
         "type": "Point",
@@ -53,8 +53,8 @@
     {
       "type": "Feature",
       "properties": {
-        "stop_id": 988,
-        "stop_name": "קרית משה/שדרות הרצל"
+        "id": 988,
+        "name": "קרית משה/שדרות הרצל"
       },
       "geometry": {
         "type": "Point",
@@ -67,8 +67,8 @@
     {
       "type": "Feature",
       "properties": {
-        "stop_id": 989,
-        "stop_name": "קרית משה/שדרות הרצל"
+        "id": 989,
+        "name": "קרית משה/שדרות הרצל"
       },
       "geometry": {
         "type": "Point",
@@ -81,8 +81,8 @@
     {
       "type": "Feature",
       "properties": {
-        "stop_id": 990,
-        "stop_name": "קרית משה/שד' המאירי"
+        "id": 990,
+        "name": "קרית משה/שד' המאירי"
       },
       "geometry": {
         "type": "Point",
@@ -95,8 +95,8 @@
     {
       "type": "Feature",
       "properties": {
-        "stop_id": 991,
-        "stop_name": "קרית משה/שד' המאירי"
+        "id": 991,
+        "name": "קרית משה/שד' המאירי"
       },
       "geometry": {
         "type": "Point",
@@ -109,8 +109,8 @@
     {
       "type": "Feature",
       "properties": {
-        "stop_id": 1589,
-        "stop_name": "תחנת רק''ל יפה נוף"
+        "id": 1589,
+        "name": "תחנת רק''ל יפה נוף"
       },
       "geometry": {
         "type": "Point",
@@ -123,8 +123,8 @@
     {
       "type": "Feature",
       "properties": {
-        "stop_id": 1733,
-        "stop_name": "החלוץ/רבי בנימין"
+        "id": 1733,
+        "name": "החלוץ/רבי בנימין"
       },
       "geometry": {
         "type": "Point",
@@ -137,8 +137,8 @@
     {
       "type": "Feature",
       "properties": {
-        "stop_id": 1734,
-        "stop_name": "החלוץ"
+        "id": 1734,
+        "name": "החלוץ"
       },
       "geometry": {
         "type": "Point",
@@ -151,8 +151,8 @@
     {
       "type": "Feature",
       "properties": {
-        "stop_id": 1735,
-        "stop_name": "פרבשטיין/בית הדפוס"
+        "id": 1735,
+        "name": "פרבשטיין/בית הדפוס"
       },
       "geometry": {
         "type": "Point",
@@ -165,8 +165,8 @@
     {
       "type": "Feature",
       "properties": {
-        "stop_id": 2023,
-        "stop_name": "החלוץ/המייסדים"
+        "id": 2023,
+        "name": "החלוץ/המייסדים"
       },
       "geometry": {
         "type": "Point",
@@ -179,8 +179,8 @@
     {
       "type": "Feature",
       "properties": {
-        "stop_id": 2025,
-        "stop_name": "המייסדים"
+        "id": 2025,
+        "name": "המייסדים"
       },
       "geometry": {
         "type": "Point",
@@ -193,8 +193,8 @@
     {
       "type": "Feature",
       "properties": {
-        "stop_id": 2782,
-        "stop_name": "בי''ח שערי צדק/בייט"
+        "id": 2782,
+        "name": "בי''ח שערי צדק/בייט"
       },
       "geometry": {
         "type": "Point",
@@ -207,8 +207,8 @@
     {
       "type": "Feature",
       "properties": {
-        "stop_id": 3273,
-        "stop_name": "משה קול/פלומבו"
+        "id": 3273,
+        "name": "משה קול/פלומבו"
       },
       "geometry": {
         "type": "Point",
@@ -221,8 +221,8 @@
     {
       "type": "Feature",
       "properties": {
-        "stop_id": 3274,
-        "stop_name": "משה קול/דינור"
+        "id": 3274,
+        "name": "משה קול/דינור"
       },
       "geometry": {
         "type": "Point",
@@ -235,8 +235,8 @@
     {
       "type": "Feature",
       "properties": {
-        "stop_id": 3275,
-        "stop_name": "משה קול/מרה"
+        "id": 3275,
+        "name": "משה קול/מרה"
       },
       "geometry": {
         "type": "Point",
@@ -249,8 +249,8 @@
     {
       "type": "Feature",
       "properties": {
-        "stop_id": 3277,
-        "stop_name": "משה קול/שרייבוים"
+        "id": 3277,
+        "name": "משה קול/שרייבוים"
       },
       "geometry": {
         "type": "Point",
@@ -263,8 +263,8 @@
     {
       "type": "Feature",
       "properties": {
-        "stop_id": 3278,
-        "stop_name": "משה קול/שרייבום"
+        "id": 3278,
+        "name": "משה קול/שרייבום"
       },
       "geometry": {
         "type": "Point",
@@ -277,8 +277,8 @@
     {
       "type": "Feature",
       "properties": {
-        "stop_id": 3281,
-        "stop_name": "משה קול/מרה"
+        "id": 3281,
+        "name": "משה קול/מרה"
       },
       "geometry": {
         "type": "Point",
@@ -291,8 +291,8 @@
     {
       "type": "Feature",
       "properties": {
-        "stop_id": 3282,
-        "stop_name": "משה קול/דינור"
+        "id": 3282,
+        "name": "משה קול/דינור"
       },
       "geometry": {
         "type": "Point",
@@ -305,8 +305,8 @@
     {
       "type": "Feature",
       "properties": {
-        "stop_id": 3283,
-        "stop_name": "משה קול/תוסיה כהן"
+        "id": 3283,
+        "name": "משה קול/תוסיה כהן"
       },
       "geometry": {
         "type": "Point",
@@ -319,8 +319,8 @@
     {
       "type": "Feature",
       "properties": {
-        "stop_id": 3286,
-        "stop_name": "מרכז מסחרי/אביזוהר"
+        "id": 3286,
+        "name": "מרכז מסחרי/אביזוהר"
       },
       "geometry": {
         "type": "Point",
@@ -333,8 +333,8 @@
     {
       "type": "Feature",
       "properties": {
-        "stop_id": 3333,
-        "stop_name": "משה קול/תוסיה כהן"
+        "id": 3333,
+        "name": "משה קול/תוסיה כהן"
       },
       "geometry": {
         "type": "Point",
@@ -347,8 +347,8 @@
     {
       "type": "Feature",
       "properties": {
-        "stop_id": 386,
-        "stop_name": "יוחאי בן נון"
+        "id": 386,
+        "name": "יוחאי בן נון"
       },
       "geometry": {
         "type": "Point",
@@ -361,8 +361,8 @@
     {
       "type": "Feature",
       "properties": {
-        "stop_id": 3374,
-        "stop_name": "ביטוח לאומי"
+        "id": 3374,
+        "name": "ביטוח לאומי"
       },
       "geometry": {
         "type": "Point",
@@ -375,8 +375,8 @@
     {
       "type": "Feature",
       "properties": {
-        "stop_id": 3375,
-        "stop_name": "חניון הלאום/שד' הנשיא השישי"
+        "id": 3375,
+        "name": "חניון הלאום/שד' הנשיא השישי"
       },
       "geometry": {
         "type": "Point",
@@ -389,8 +389,8 @@
     {
       "type": "Feature",
       "properties": {
-        "stop_id": 3519,
-        "stop_name": "החלוץ/גפני"
+        "id": 3519,
+        "name": "החלוץ/גפני"
       },
       "geometry": {
         "type": "Point",
@@ -403,8 +403,8 @@
     {
       "type": "Feature",
       "properties": {
-        "stop_id": 4216,
-        "stop_name": "גשר המיתרים/שד' הרצל"
+        "id": 4216,
+        "name": "גשר המיתרים/שד' הרצל"
       },
       "geometry": {
         "type": "Point",
@@ -417,8 +417,8 @@
     {
       "type": "Feature",
       "properties": {
-        "stop_id": 5929,
-        "stop_name": "מכללה להנדסה ירושלים"
+        "id": 5929,
+        "name": "מכללה להנדסה ירושלים"
       },
       "geometry": {
         "type": "Point",
@@ -431,8 +431,8 @@
     {
       "type": "Feature",
       "properties": {
-        "stop_id": 5943,
-        "stop_name": "תחנת רקל''ה החלוץ/פרבשטיין"
+        "id": 5943,
+        "name": "תחנת רקל''ה החלוץ/פרבשטיין"
       },
       "geometry": {
         "type": "Point",
@@ -445,8 +445,8 @@
     {
       "type": "Feature",
       "properties": {
-        "stop_id": 5980,
-        "stop_name": "תחנת רכבת קלה ככר דניה/שד' הרצל"
+        "id": 5980,
+        "name": "תחנת רכבת קלה ככר דניה/שד' הרצל"
       },
       "geometry": {
         "type": "Point",
@@ -459,8 +459,8 @@
     {
       "type": "Feature",
       "properties": {
-        "stop_id": 6003,
-        "stop_name": "תחנת רכבת קלה החלוץ/שד' הרצל"
+        "id": 6003,
+        "name": "תחנת רכבת קלה החלוץ/שד' הרצל"
       },
       "geometry": {
         "type": "Point",
@@ -473,8 +473,8 @@
     {
       "type": "Feature",
       "properties": {
-        "stop_id": 6092,
-        "stop_name": "יוחאי בן נון"
+        "id": 6092,
+        "name": "יוחאי בן נון"
       },
       "geometry": {
         "type": "Point",
@@ -487,8 +487,8 @@
     {
       "type": "Feature",
       "properties": {
-        "stop_id": 9898,
-        "stop_name": "עמירם סיוון/ניסן הרפז"
+        "id": 9898,
+        "name": "עמירם סיוון/ניסן הרפז"
       },
       "geometry": {
         "type": "Point",
@@ -501,8 +501,8 @@
     {
       "type": "Feature",
       "properties": {
-        "stop_id": 9989,
-        "stop_name": "גבעת בית הכרם"
+        "id": 9989,
+        "name": "גבעת בית הכרם"
       },
       "geometry": {
         "type": "Point",
@@ -515,8 +515,8 @@
     {
       "type": "Feature",
       "properties": {
-        "stop_id": 9900,
-        "stop_name": "החלוץ/המייסדים"
+        "id": 9900,
+        "name": "החלוץ/המייסדים"
       },
       "geometry": {
         "type": "Point",
@@ -529,8 +529,8 @@
     {
       "type": "Feature",
       "properties": {
-        "stop_id": 9901,
-        "stop_name": "המייסדים"
+        "id": 9901,
+        "name": "המייסדים"
       },
       "geometry": {
         "type": "Point",
@@ -543,8 +543,8 @@
     {
       "type": "Feature",
       "properties": {
-        "stop_id": 9978,
-        "stop_name": "גבעת בית הכרם"
+        "id": 9978,
+        "name": "גבעת בית הכרם"
       },
       "geometry": {
         "type": "Point",
@@ -557,8 +557,8 @@
     {
       "type": "Feature",
       "properties": {
-        "stop_id": 9991,
-        "stop_name": "עמירם סיוון/ניסן הרפז"
+        "id": 9991,
+        "name": "עמירם סיוון/ניסן הרפז"
       },
       "geometry": {
         "type": "Point",
@@ -571,8 +571,8 @@
     {
       "type": "Feature",
       "properties": {
-        "stop_id": 6244,
-        "stop_name": "תחנת רקל''ה החלוץ/פרבשטיין"
+        "id": 6244,
+        "name": "תחנת רקל''ה החלוץ/פרבשטיין"
       },
       "geometry": {
         "type": "Point",
@@ -585,8 +585,8 @@
     {
       "type": "Feature",
       "properties": {
-        "stop_id": 6307,
-        "stop_name": "עמירם סיוון/יעקב שריבוים"
+        "id": 6307,
+        "name": "עמירם סיוון/יעקב שריבוים"
       },
       "geometry": {
         "type": "Point",
@@ -599,8 +599,8 @@
     {
       "type": "Feature",
       "properties": {
-        "stop_id": 386,
-        "stop_name": "עמירם סיוון/יעקוב שריבוים"
+        "id": 386,
+        "name": "עמירם סיוון/יעקוב שריבוים"
       },
       "geometry": {
         "type": "Point",
@@ -613,8 +613,8 @@
     {
       "type": "Feature",
       "properties": {
-        "stop_id": 463,
-        "stop_name": "בנייני האומה/שדרות שז''ר"
+        "id": 463,
+        "name": "בנייני האומה/שדרות שז''ר"
       },
       "geometry": {
         "type": "Point",
