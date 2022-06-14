@@ -16,7 +16,7 @@ import {
 import moment from 'moment'
 import {Row, Column} from '../helpers/Container'
 import JourneyEdgesSection from '../helpers/JourneyEdgesSection'
-import styles from '../styles'
+import styles from '../../styles'
 import {SectionHeader} from '../helpers/ListComponent'
 
 const TimePreferencesMenu = () => {

@@ -1,6 +1,6 @@
 import React from 'react';
 import { FlatList, TouchableOpacity } from 'react-native';
-import { Column, Row } from '../helpers/Container';
+import { Column, Row } from '../Container';
 
 export default props => (
   <FlatList

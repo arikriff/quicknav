@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row, Column } from '../helpers/Container';
+import { Row, Column } from '../Container';
 
 export default () => (
   <Column>

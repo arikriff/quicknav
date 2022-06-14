@@ -6,14 +6,18 @@
  * @flow strict-local
  */
 
-import React from 'react'
-import DataErrorScreen from './components/screens/DataErrorScreen'
-import JourneyPlanningScreen from './components/screens/JourneyPlanningScreen'
-import StopListScreen from './components/screens/StopListScreen'
+import React, { useState } from 'react'
+import DataErrorScreen from './modules/component/visual/screen/DataErrorScreen'
+import JourneyPlanningScreen from './modules/component/visual/screen/JourneyPlanningScreen'
+import StopListScreen from './modules/component/visual/screen/StopListScreen'
 import { NavigationContainer } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
+import { toCollege } from './modules/dataInfo/Direction'
 
 const fs = require('fs')
+
+const [direction, setDirection] = useState(toCollege)
+const AppContext = React.createContext({direction, setDirection})
 
 const App = () => {
   
@@ -66,36 +70,38 @@ const App = () => {
   }
 
   return (
-    <NavigationContainer>
-      {
-        isErr ?
-        (
-          <Stack.Navigator>
-            <Stack.Screen
-              name='DataError'
-              component={DataErrorScreen}
-              options={{title: 'שגיאה'}}
-            />
-          </Stack.Navigator>
-        ) :
-        (
-          <Stack.Navigator>
-            <Stack.Screen
-              name='JourneyPlanning'
-              component={JourneyPlanningScreen}
-              options={{
-                title: 'תכנון מסלול',
-                data: DATA
-              }}
-            />
-            <Stack.Screen
-              name='StopList'
-              component={StopListScreen}
-            />
-          </Stack.Navigator>
-        )
-      }
-    </NavigationContainer>
+    <AppContext.Provider value={{direction, setDirection}}>
+      <NavigationContainer>
+        {
+          isErr ?
+          (
+            <Stack.Navigator>
+              <Stack.Screen
+                name='DataError'
+                component={DataErrorScreen}
+                options={{title: 'שגיאה'}}
+              />
+            </Stack.Navigator>
+          ) :
+          (
+            <Stack.Navigator>
+              <Stack.Screen
+                name='JourneyPlanning'
+                component={JourneyPlanningScreen}
+                options={{
+                  title: 'תכנון מסלול',
+                  data: DATA
+                }}
+              />
+              <Stack.Screen
+                name='StopList'
+                component={StopListScreen}
+              />
+            </Stack.Navigator>
+          )
+        }
+      </NavigationContainer>
+    </AppContext.Provider>
   )
 }
 
