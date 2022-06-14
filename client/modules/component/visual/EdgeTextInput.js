@@ -1,34 +1,19 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import {TextInput} from 'react-native'
-import { toCollege } from '../../dataInfo/Direction'
-import { origin, destination } from '../../dataInfo/Use'
-//
+import Direction from '../../dataInfo/Direction'
+import Use from '../../dataInfo/Use'
+import { getContext } from '../Context'
+
 import styles from '../styles'
 
 export default props => {
 
-	const [direction, setDirection] = useState(props.direction)
+	const context = getContext()
 
-	useEffect(() => {
-		if (props.direction !== undefined) setDirection(props.direction)
-	})
-	
 	return (
-		
-			<TextInput
-				placeholder={
-					props.use === undefined || props.use === origin ?
-					'מאיפה נוסעים?' :
-					'לאן נוסעים'
-				}
-				editable={false}
-				value=
-				onPressIn={props.onPressIn}
-				style={[
-					styles.alignedTextInput,
-					...(props.styles ? props.styles : null)
-				]}
-			/>
-		</View>
+		<TextInput
+			placeholder={props.state == Use.origin ? 'מאיפה נוסעים?' : 'לאן נוסעים?'}
+			editable={false}
+		/>
 	)
 }
