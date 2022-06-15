@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import Data from '../DataInfo/Data'
-import { defaultDirection } from '../DataInfo/Direction'
+import Data from '../info/Data'
+import { defaultDirection } from '../info/Direction'
 
 const Context = React.createContext(null)
 export const getContext = () => React.useContext(Context)

@@ -4,7 +4,7 @@ import Icon from 'react-native-vector-icons/Ionicons'
 import {Row, Column} from './Container'
 import AlignedTextInput from './EdgeTextInput'
 import styles from '../styles'
-import { toCollege, fromCollege } from '../../dataInfo/Direction'
+import { toCollege, fromCollege } from '../../info/Direction'
 
 export default props => {
 

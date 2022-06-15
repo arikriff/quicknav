@@ -2,7 +2,7 @@ export default Data = () => {
   
   try {
 
-    fs.readFile('../server/src/db/line.json', 'utf8', (err, lineJsonString) => {
+    fs.readFile('../../../server/db/line.json', 'utf8', (err, lineJsonString) => {
 
       if (err) {
         console.log('Error read JSON file:', err)
