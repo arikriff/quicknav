@@ -1,17 +1,65 @@
+export default Data = () => {
+  
+  try {
 
-const getStopFeature = (id, stopFeatures) => (
+    fs.readFile('../server/src/db/line.json', 'utf8', (err, lineJsonString) => {
+
+      if (err) {
+        console.log('Error read JSON file:', err)
+        throw err
+      }
+
+      fs.readFile('../server/src/db/route.geojson', 'utf8', (err, routeGeojsonString) => {
+
+        if (err) {
+          console.log('Error read JSON file:', err)
+          throw err
+        }
+
+        fs.readFile('../server/src/db/stops.geojson', 'utf8', (err, stopsGeojsonString) => {
+
+          if (err) {
+            console.log('Error read JSON file:', err)
+            throw err
+          }
+          
+          try {
+
+            return {
+              line: JSON.parse(lineJsonString),
+              route: JSON.parse(routeGeojsonString),
+              stops: JSON.parse(stopsGeojsonString)
+            }
+
+          }
+
+          catch {
+            console.log('Error parsing JSON string:', err)
+            throw err
+          }
+        })
+      })
+    })
+  }
+
+  catch (err) {
+    return null
+  }
+}
+
+export const getStopFeature = (id, stopFeatures) => (
 	stopFeatures.find(stop => stop.properties.id == id)
 )
 	
-const getStopInLine = (id, lineStops) => (
+export const getStopInLine = (id, lineStops) => (
   lineStops.filter(stop => stop.id == id)
 )
 
-const getCollegeStopInLine = lineStops => (
+export const getCollegeStopInLine = lineStops => (
   lineStops.filter(stop => stop.use.college)
 )
 
-const getStopData = (stopInLine, stopFeature) => {
+export const getStopData = (stopInLine, stopFeature) => {
 
   const stopsInTrip = []
 
@@ -38,7 +86,7 @@ const getStopData = (stopInLine, stopFeature) => {
 
 }
 
-const getStopDataById = (id, lineStops, stopFeatures) => {
+export const getStopDataById = (id, lineStops, stopFeatures) => {
 
   const stopInLine = getStopInLine(id, lineStops)
   const stopFeature = getStopFeature(id, stopFeatures)
@@ -47,20 +95,11 @@ const getStopDataById = (id, lineStops, stopFeatures) => {
 
 }
 
-const getCollegeStopData = (lineStops, stopFeatures) => {
+export const getCollegeStopData = (lineStops, stopFeatures) => {
 
   const stopInLine = getCollegeStopInLine(lineStops)
   const stopFeature = getStopFeature(stopInLine.id, stopFeatures)
 
   return getStopData(stopInLine, stopFeature)
   
-}
-
-export {
-  getStopFeature,
-  getStopInLine,
-  getCollegeStopInLine,
-  getStopData,
-  getStopDataById,
-  getCollegeStopData
 }

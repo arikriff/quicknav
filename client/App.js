@@ -16,9 +16,6 @@ import { toCollege } from './modules/dataInfo/Direction'
 
 const fs = require('fs')
 
-const [direction, setDirection] = useState(toCollege)
-const AppContext = React.createContext({direction, setDirection})
-
 const App = () => {
   
   const Stack = createNativeStackNavigator()
