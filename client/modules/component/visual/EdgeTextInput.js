@@ -9,21 +9,19 @@ import styles from '../styles'
 export default props => {
 
 	const context = getContext()
+	const {navigation, stopUse} = props
 
 	return (
 		<TextInput
-			placeholder={props.stopUse === origin ? 'תחנת המוצא' : 'תחנת היעד'}
+			placeholder={stopUse === origin ? 'תחנת המוצא' : 'תחנת היעד'}
 			editable={false}
 			value={
-				(props.stopUse === origin) == (context.state.direction === fromCollege) ?
+				(stopUse === origin) == (context.state.direction === fromCollege) ?
 				props.collegeStopName : (
 					context.state.stop ? context.state.stop.name : ''
 				)
 			}
-			onPressIn={() => {
-				const {navigation, stopUse} = props
-				navigation.navigate('StopList', {navigation, stopUse})
-			}}
+			onPressIn={() => {navigation.navigate('StopList', {navigation, stopUse})}}
 		/>
 	)
 }
