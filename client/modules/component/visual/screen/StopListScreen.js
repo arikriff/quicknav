@@ -6,6 +6,32 @@ import { origin } from '../../../info/StopUse'
 import { getContext } from '../../Context'
 import { Column, Row } from '../Container'
 
+
+const Item = ({stopItem, navigation, stopUse}) => {
+  
+  const onPress = () => {
+
+    context.setState({
+      data: context.state.data,
+      direction: stopUse === origin ? toCollege : fromCollege,
+      stopId: stopItem.id
+    })
+
+    navigation.goBack()
+
+  }
+
+  return (
+    <TouchableOpacity onPress={onPress}>
+      <Row>
+        <Text>
+          {stopItem.name}
+        </Text>
+      </Row>
+    </TouchableOpacity>
+  )
+}
+
 export default ({route}) => {
 
   const context = getContext()
@@ -25,33 +51,12 @@ export default ({route}) => {
 
   })
 
-  const Item = ({stopItem}) => {
-  
-    const onPress = () => {
-  
-      context.setState({
-        data: context.state.data,
-        direction: stopUse === origin ? toCollege : fromCollege,
-        stop: stopId
-      })
-  
-      navigation.goBack()
-  
-    }
-
-    return (
-      <TouchableOpacity onPress={onPress}>
-        <Row>
-          <Text>
-            {stopItem.name}
-          </Text>
-        </Row>
-      </TouchableOpacity>
-    )
-  }
-
-  const renderItem = ({StopItem}) => (
-    <Item stopItem={stopItem}/>
+  const renderItem = ({stopItem, navigation, stopUse}) => (
+    <Item
+      stopItem={stopItem}
+      navigation={navigation}
+      stopUse={stopUse}
+    />
   )
 
   return (
