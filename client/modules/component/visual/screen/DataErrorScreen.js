@@ -1,5 +1,6 @@
 import React from 'react';
-import { Row, Column } from '../Container';
+import { Row, Column } from '../Container'
+import { Text } from 'react-native'
 
 export default () => (
   <Column>
