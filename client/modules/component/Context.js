@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import Data from '../info/Data'
 import { defaultDirection } from '../info/Direction'
 
 const Context = React.createContext(null)
@@ -8,7 +7,7 @@ export const getContext = () => React.useContext(Context)
 export const ContextProvider = props => {
 
   const [state, setState] = useState({
-    data: Data(),
+    data: props.data,
     direction: defaultDirection,
     stopId: null
   })

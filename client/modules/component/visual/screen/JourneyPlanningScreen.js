@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
-import {TouchableOpacity} from 'react-native'
+import React from 'react'
+import { TouchableOpacity } from 'react-native'
 import MapView from 'react-native-maps'
-import {Column, Row} from '../Container'
-import JourneyEdgesSection from '../JourneyEdgesSection'
+import { Column } from '../Container'
+import JourneyPlanningSection from '../JourneyPlanningSection'
 import styles from '../../styles'
 
 export default ({navigation}) => {

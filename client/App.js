@@ -13,46 +13,22 @@ import StopListScreen from './modules/component/visual/screen/StopListScreen'
 import { NavigationContainer } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { toCollege } from './modules/info/Direction'
-
-const fs = require('fs')
+import { ContextProvider } from './modules/component/Context'
+import Data from './modules/info/Data'
 
 const App = () => {
   
   const Stack = createNativeStackNavigator()
-  
+  const DATA = Data()
+
   return (
-    <AppContext.Provider value={{direction, setDirection}}>
-      <NavigationContainer>
-        {
-          isErr ?
-          (
-            <Stack.Navigator>
-              <Stack.Screen
-                name='DataError'
-                component={DataErrorScreen}
-                options={{title: 'שגיאה'}}
-              />
-            </Stack.Navigator>
-          ) :
-          (
-            <Stack.Navigator>
-              <Stack.Screen
-                name='JourneyPlanning'
-                component={JourneyPlanningScreen}
-                options={{
-                  title: 'תכנון מסלול',
-                  data: DATA
-                }}
-              />
-              <Stack.Screen
-                name='StopList'
-                component={StopListScreen}
-              />
-            </Stack.Navigator>
-          )
-        }
-      </NavigationContainer>
-    </AppContext.Provider>
+    <ContextProvider data={DATA}>
+      <Stack.Navigator initialRouteName={DATA ? 'JourneyPlanning' : 'DataError'}>
+        <Stack.Screen name='JourneyPlanning' component={JourneyPlanningScreen}/>
+        <Stack.Screen name='StopList' component={StopListScreen}/>
+        <Stack.Screen name='DataError' component={DataErrorScreen}/>
+      </Stack.Navigator>
+    </ContextProvider>
   )
 }
 
