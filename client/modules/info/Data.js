@@ -1,6 +1,6 @@
 import { origin } from './StopUse'
 
-export default Data = () => {
+export default () => {
   
   try {
 
