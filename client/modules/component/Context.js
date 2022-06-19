@@ -10,7 +10,7 @@ export const ContextProvider = props => {
   const [state, setState] = useState({
     data: Data(),
     direction: defaultDirection,
-    stop: null
+    stopId: null
   })
 
   return (

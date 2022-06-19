@@ -1,3 +1,5 @@
+import { origin } from './StopUse'
+
 export default Data = () => {
   
   try {
@@ -25,11 +27,11 @@ export default Data = () => {
           
           try {
 
-            return {
-              line: JSON.parse(lineJsonString),
-              route: JSON.parse(routeGeojsonString),
-              stops: JSON.parse(stopsGeojsonString)
-            }
+            const line = JSON.parse(lineJsonString)
+            const route = JSON.parse(routeGeojsonString)
+            const stop = JSON.parse(stopsGeojsonString)
+
+            return {line, route, stop}
 
           }
 
@@ -61,7 +63,7 @@ export const getCollegeStopInLine = lineStops => (
 
 export const getStopData = (stopInLine, stopFeature) => {
 
-  const stopsInTrip = []
+  let stopsInTrip = []
 
   stopInLine.forEach(stop => {
 
@@ -102,4 +104,24 @@ export const getCollegeStopData = (lineStops, stopFeatures) => {
 
   return getStopData(stopInLine, stopFeature)
   
+}
+
+export const getJourneyStopsData = (lineStops, stopFeatures, stopUse) => {
+
+  let journeystopsData = []
+  
+  const journeyLineStops = lineStops.filter(stop =>
+    !stop.use.college &&
+    stopUse === origin ? stop.use.origin : stop.use.destination
+  )
+  
+  journeyLineStops.forEach(stop => {
+    journeyLineStops.push({
+      id: stop.id,
+      name: getStopFeature(stop.id, stopFeatures).name
+    })
+  })
+
+  return journeyLineStops
+
 }
