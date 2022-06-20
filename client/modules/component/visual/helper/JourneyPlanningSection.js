@@ -1,8 +1,8 @@
 import React from 'react'
 import { Column } from './Container'
 import JourneyTextInput from './JourneyTextInput'
-import {origin, destination } from '../../info/StopUse'
-import { getContext } from '../Context'
+import {origin, destination } from '../../../info/StopUse'
+import { getContext } from '../../unvisual/Context'
 
 
 export default ({navigation}) => {

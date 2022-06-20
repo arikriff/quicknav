@@ -1,10 +1,10 @@
 import React from 'react'
 import { TextInput } from 'react-native'
-import { getContext } from '../Context'
-import { origin } from '../../info/StopUse'
+import { getContext } from '../../unvisual/Context'
+import { origin } from '../../../info/StopUse'
 
-import { fromCollege } from '../../info/Direction'
-import styles from '../styles'
+import { fromCollege } from '../../../info/Direction'
+import styles from '../../unvisual/styles'
 
 export default ({navigation, stopUse, collegeStopName}) => {
 

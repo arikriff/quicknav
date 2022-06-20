@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { defaultDirection } from '../info/Direction'
+import { defaultDirection } from '../../info/Direction'
 
 const Context = React.createContext(null)
 export const getContext = () => React.useContext(Context)

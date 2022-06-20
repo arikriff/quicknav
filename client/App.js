@@ -12,7 +12,7 @@
  import StopListScreen from './modules/component/visual/screen/StopListScreen'
  import { NavigationContainer } from '@react-navigation/native'
  import { createNativeStackNavigator } from '@react-navigation/native-stack'
- import { ContextProvider } from './modules/component/Context'
+ import { ContextProvider } from './modules/component/unvisual/Context'
  import Data from './modules/info/Data'
  
  const App = () => {
@@ -34,4 +34,3 @@
  }
  
  export default App;
- 

@@ -3,7 +3,7 @@ import { FlatList, TouchableOpacity } from 'react-native'
 import { getJourneyStopsData } from '../../../info/Data';
 import { fromCollege, toCollege } from '../../../info/Direction';
 import { origin } from '../../../info/StopUse'
-import { getContext } from '../../Context'
+import { getContext } from '../../unvisual/Context'
 import { Column, Row } from '../Container'
 
 
