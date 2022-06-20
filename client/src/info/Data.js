@@ -1,54 +1,19 @@
+import { read } from './File'
 import { origin } from './StopUse'
-import * as fs from 'node:fs'
-
 
 export default () => {
+
+  const line = read('../../../server/src/db/line.json', false)
+  if (!line) return null
+
+  const route = read('../../../server/src/db/route.geojson', true)
+  if (!route) return null
+
+  const stops = read('../../../server/src/db/stops.geojson', true)
+  if (!stops) return null
+
+  return {line, route, stops}
   
-  try {
-
-    fs.readFile('../../../server/db/line.json', 'utf8', (err, lineJsonString) => {
-
-      if (err) {
-        console.log('Error read JSON file:', err)
-        throw err
-      }
-
-      fs.readFile('../server/src/db/route.geojson', 'utf8', (err, routeGeojsonString) => {
-
-        if (err) {
-          console.log('Error read JSON file:', err)
-          throw err
-        }
-
-        fs.readFile('../server/src/db/stops.geojson', 'utf8', (err, stopsGeojsonString) => {
-
-          if (err) {
-            console.log('Error read JSON file:', err)
-            throw err
-          }
-          
-          try {
-
-            const line = JSON.parse(lineJsonString)
-            const route = JSON.parse(routeGeojsonString)
-            const stop = JSON.parse(stopsGeojsonString)
-
-            return {line, route, stop}
-
-          }
-
-          catch {
-            console.log('Error parsing JSON string:', err)
-            throw err
-          }
-        })
-      })
-    })
-  }
-
-  catch (err) {
-    return null
-  }
 }
 
 export const getStopFeature = (id, stopFeatures) => (
