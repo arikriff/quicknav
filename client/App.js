@@ -7,13 +7,13 @@
  */
 
  import React from 'react'
- import DataErrorScreen from './modules/component/visual/screen/DataErrorScreen'
- import JourneyPlanningScreen from './modules/component/visual/screen/JourneyPlanningScreen'
- import StopListScreen from './modules/component/visual/screen/StopListScreen'
+ import DataErrorScreen from './src/component/visual/screen/DataErrorScreen'
+ import JourneyPlanningScreen from './src/component/visual/screen/JourneyPlanningScreen'
+ import StopListScreen from './src/component/visual/screen/StopListScreen'
  import { NavigationContainer } from '@react-navigation/native'
  import { createNativeStackNavigator } from '@react-navigation/native-stack'
- import { ContextProvider } from './modules/component/unvisual/Context'
- import Data from './modules/info/Data'
+ import { ContextProvider } from './src/component/unvisual/Context'
+ import Data from './src/info/Data'
  
  const App = () => {
    
