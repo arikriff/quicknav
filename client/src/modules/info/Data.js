@@ -1,49 +1,63 @@
-import { readMany } from './File'
 import { origin } from './StopUse'
 
-const filePaths = [
-  './src/db/line.json',
-  './src/db/route.geojson',
-  './src/db/stops.geojson'
-]
+const line = require('../../db/line.json')
+const route = require('../../db/route.json')
+const stops = require('../../db/stops.json')
 
-export default () => readMany(filePaths)
+export default () => ({line, route, stops})
 
-export const getStopFeature = (id, stopFeatures) => (
-	stopFeatures.find(stop => stop.properties.id == id)
-)
+export const getStopFeature = (id, stopFeatures) => {
+  console.log(`in getStopFeature --> id=${id} stopFeatures=${stopFeatures}\n\n`)
+  return (
+    stopFeatures.find(stop => stop.properties.id == id)
+  )
+}
 	
-export const getStopInLine = (id, lineStops) => (
-  lineStops.filter(stop => stop.id == id)
-)
+export const getStopInLine = (id, lineStops) => {
 
-export const getCollegeStopInLine = lineStops => (
-  lineStops.filter(stop => stop.use.college)
-)
-
-export const getStopData = (stopInLine, stopFeature) => {
-
+  const filtered = lineStops.filter(stop => stop.id == id)
   let stopsInTrip = []
 
-  stopInLine.forEach(stop => {
+  filtered.forEach(stop => {
 
-    stopsInTrip.push({
+    stopsInTrip.push ({
 
-      duration: stop.duration,
+      plannedTime: stop.plannedTime,
 
       use: {
-        origin: stop.use.origin,
-        destination: stop.use.destination
+        origin: stop.origin,
+        destination: stop.destination
       }
     })
   })
 
   return {
-    id: stopFeature.id,
+    id,
+    college: filtered[0].use.college,
+    stopsInTrip
+  }
+
+}
+
+export const getCollegeStopInLine = lineStops => {
+
+  console.log(`in getCollegeStopInLine --> lineStops=${lineStops}\n\n`)
+  const id = lineStops.find(stop => stop.use.college).id
+
+  return getStopInLine(id, lineStops)
+
+}
+
+export const getStopData = (stopInLine, stopFeature) => {
+
+  console.log(`stopInLine: ${stopInLine}\n\nstopFeature: ${stopFeature}\n\n`)
+
+  return {
+    id: stopFeature.properties.id,
     name: stopFeature.properties.name,
     geometry: stopFeature.geometry,
-    college: stopInLine[0].use.college,
-    stopsInTrip: stopsInTrip
+    college: stopInLine.college,
+    stopsInTrip: stopInLine.stopsInTrip
   }
 
 }
@@ -58,6 +72,8 @@ export const getStopDataById = (id, lineStops, stopFeatures) => {
 }
 
 export const getCollegeStopData = (lineStops, stopFeatures) => {
+
+  console.log(`in getCollegeStopData --> lineStops=${lineStops} stopFeatures = ${stopFeatures}\n\n`)
 
   const stopInLine = getCollegeStopInLine(lineStops)
   const stopFeature = getStopFeature(stopInLine.id, stopFeatures)

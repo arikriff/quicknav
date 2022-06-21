@@ -3,7 +3,7 @@ const GeoJSON = require('geojson')
 
 export const read = path => {
 
-  let separated = filePath.split('.')
+  let separated = path.split('.')
   const extension = separated.pop() === 'geojson' ? 'GeoJSON' : 'JSON'
 
   let fileData = {

@@ -1,24 +1,16 @@
 import React from 'react'
-import { TouchableOpacity } from 'react-native'
-import MapView from 'react-native-maps'
+import { Text, TouchableOpacity } from 'react-native'
+import Map from '../helper/Map' 
 import { Column } from '../helper/Container'
 import JourneyPlanningSection from '../helper/JourneyPlanningSection'
+import { getContext } from '../../unvisual/Context'
 import styles from '../../unvisual/styles'
 
 export default ({navigation}) => {
 
-	const context = getContext()
-
 	return (
 		<Column>
-			<MapView>
-				<Geojson
-					geojson={context.state.route}
-				/>
-				<Geojson
-					geojson={context.state.stops}
-				/>
-			</MapView>
+			<Map/>
 			<JourneyPlanningSection navigation={navigation}/>
 			<TouchableOpacity>
 				<Text>

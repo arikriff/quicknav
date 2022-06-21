@@ -3,12 +3,18 @@ import { Column } from './Container'
 import JourneyTextInput from './JourneyTextInput'
 import {origin, destination } from '../../../info/StopUse'
 import { getContext } from '../../unvisual/Context'
+import { getCollegeStopData } from '../../../info/Data'
 
 
 export default ({navigation}) => {
 
 	const context = getContext()
-	const collegeStopData = getCollegeStopData(context.state.line, context.state.stops)
+
+	const collegeStopData = getCollegeStopData(
+		context.state.data.line.stops,
+		context.state.data.stops.features
+	)
+	
 	const collegeStopName = collegeStopData.name
 
 	return (
