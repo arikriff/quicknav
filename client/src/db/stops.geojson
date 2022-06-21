@@ -1,0 +1,628 @@
+{
+  "type": "FeatureCollection",
+  "name": "stops",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+    }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 221,
+        "name": "משרד החוץ/שד' רבין"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.202207,
+          31.782889
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 279,
+        "name": "פרבשטיין/בית הדפוס"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.192338,
+          31.78599
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 800,
+        "name": "בנייני האומה/הנשיא השישי"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.203701,
+          31.78634
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 988,
+        "name": "קרית משה/שדרות הרצל"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.196995,
+          31.785802
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 989,
+        "name": "קרית משה/שדרות הרצל"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.197227,
+          31.785735
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 990,
+        "name": "קרית משה/שד' המאירי"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.194187,
+          31.786311
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 991,
+        "name": "קרית משה/שד' המאירי"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.194325,
+          31.786182
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 1589,
+        "name": "תחנת רק''ל יפה נוף"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.185059,
+          31.776787
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 1733,
+        "name": "החלוץ/רבי בנימין"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.192657,
+          31.781264
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 1734,
+        "name": "החלוץ"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.190224,
+          31.779467
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 1735,
+        "name": "פרבשטיין/בית הדפוס"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.192593,
+          31.786081
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 2023,
+        "name": "החלוץ/המייסדים"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.190824,
+          31.777446
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 2025,
+        "name": "המייסדים"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.187713,
+          31.778141
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 2782,
+        "name": "בי''ח שערי צדק/בייט"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.185437,
+          31.775096
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 3273,
+        "name": "משה קול/פלומבו"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.190365,
+          31.770618
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 3274,
+        "name": "משה קול/דינור"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.19167,
+          31.768861
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 3275,
+        "name": "משה קול/מרה"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.192666,
+          31.770868
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 3277,
+        "name": "משה קול/שרייבוים"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.192513,
+          31.771926
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 3278,
+        "name": "משה קול/שרייבום"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.192373,
+          31.77206
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 3281,
+        "name": "משה קול/מרה"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.192584,
+          31.770693
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 3282,
+        "name": "משה קול/דינור"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.191388,
+          31.76913
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 3283,
+        "name": "משה קול/תוסיה כהן"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.19007,
+          31.771527
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 3286,
+        "name": "מרכז מסחרי/אביזוהר"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.186959,
+          31.774634
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 3333,
+        "name": "משה קול/תוסיה כהן"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.189683,
+          31.772108
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 386,
+        "name": "יוחאי בן נון"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.190099,
+          31.772823
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 3374,
+        "name": "ביטוח לאומי"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.200768,
+          31.784519
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 3375,
+        "name": "חניון הלאום/שד' הנשיא השישי"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.203037,
+          31.783139
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 3519,
+        "name": "החלוץ/גפני"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.189433,
+          31.776013
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 4216,
+        "name": "גשר המיתרים/שד' הרצל"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.199532,
+          31.787171
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 5929,
+        "name": "מכללה להנדסה ירושלים"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.194157,
+          31.771176
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 5943,
+        "name": "תחנת רקל''ה החלוץ/פרבשטיין"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.191835,
+          31.783365
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 5980,
+        "name": "תחנת רכבת קלה ככר דניה/שד' הרצל"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.18865,
+          31.780884
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 6003,
+        "name": "תחנת רכבת קלה החלוץ/שד' הרצל"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.191205,
+          31.782661
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 6092,
+        "name": "יוחאי בן נון"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.190869,
+          31.77288
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 9898,
+        "name": "עמירם סיוון/ניסן הרפז"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.191867,
+          31.774247
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 9989,
+        "name": "גבעת בית הכרם"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.189469,
+          31.774895
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 9900,
+        "name": "החלוץ/המייסדים"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.190595,
+          31.776628
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 9901,
+        "name": "המייסדים"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.187799,
+          31.778028
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 9978,
+        "name": "גבעת בית הכרם"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.189476,
+          31.774801
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 9991,
+        "name": "עמירם סיוון/ניסן הרפז"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.191479,
+          31.774255
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 6244,
+        "name": "תחנת רקל''ה החלוץ/פרבשטיין"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.191922,
+          31.783033
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 6307,
+        "name": "עמירם סיוון/יעקב שריבוים"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.19355,
+          31.77311
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 386,
+        "name": "עמירם סיוון/יעקוב שריבוים"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.193651,
+          31.773139
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 463,
+        "name": "בנייני האומה/שדרות שז''ר"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.203367,
+          31.787718
+        ]
+      }
+    }
+  ]
+}

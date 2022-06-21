@@ -1,10 +1,15 @@
-import android.os.Bundle;
 
 package com.client;
 
+import android.os.Bundle;
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;
+import com.facebook.react.ReactPackage;
+import com.facebook.react.shell.MainReactPackage;
 import com.facebook.react.ReactRootView;
+import com.rnfs.RNFSPackage; // <------- add package
+import java.util.List;
+import java.util.Arrays;
 
 
 public class MainActivity extends ReactActivity {
@@ -44,5 +49,12 @@ public class MainActivity extends ReactActivity {
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(null);
+  }
+
+  protected List<ReactPackage> getPackages() {
+    return Arrays.<ReactPackage>asList(
+      new MainReactPackage(), // <---- add comma
+      new RNFSPackage() // <---------- add package
+    );
   }
 }

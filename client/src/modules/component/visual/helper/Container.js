@@ -1,6 +1,6 @@
 import React from 'react'
 import {View} from 'react-native'
-import styles from '../styles'
+import styles from '../../unvisual/styles'
 
 
 const Container = props => (

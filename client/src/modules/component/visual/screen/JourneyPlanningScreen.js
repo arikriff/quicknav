@@ -1,7 +1,7 @@
 import React from 'react'
 import { TouchableOpacity } from 'react-native'
 import MapView from 'react-native-maps'
-import { Column } from '../Container'
+import { Column } from '../helper/Container'
 import JourneyPlanningSection from '../helper/JourneyPlanningSection'
 import styles from '../../unvisual/styles'
 

@@ -4,7 +4,7 @@ import { getJourneyStopsData } from '../../../info/Data';
 import { fromCollege, toCollege } from '../../../info/Direction';
 import { origin } from '../../../info/StopUse'
 import { getContext } from '../../unvisual/Context'
-import { Column, Row } from '../Container'
+import { Column, Row } from '../helper/Container'
 
 
 const Item = ({stopItem, navigation, stopUse}) => {

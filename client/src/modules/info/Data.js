@@ -1,20 +1,13 @@
-import { read } from './File'
+import { readMany } from './File'
 import { origin } from './StopUse'
 
-export default () => {
+const filePaths = [
+  './src/db/line.json',
+  './src/db/route.geojson',
+  './src/db/stops.geojson'
+]
 
-  const line = read('../../../server/src/db/line.json', false)
-  if (!line) return null
-
-  const route = read('../../../server/src/db/route.geojson', true)
-  if (!route) return null
-
-  const stops = read('../../../server/src/db/stops.geojson', true)
-  if (!stops) return null
-
-  return {line, route, stops}
-  
-}
+export default () => readMany(filePaths)
 
 export const getStopFeature = (id, stopFeatures) => (
 	stopFeatures.find(stop => stop.properties.id == id)
