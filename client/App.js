@@ -7,9 +7,7 @@
  */
 
  import React from 'react'
- import DataErrorScreen from './src/modules/component/visual/screen/DataErrorScreen'
- import JourneyPlanningScreen from './src/modules/component/visual/screen/JourneyPlanningScreen'
- import StopListScreen from './src/modules/component/visual/screen/StopListScreen'
+ import { JourneyPlanningScreen, StopListScreen } from './src/modules/component/visual/Screen'
  import { NavigationContainer } from '@react-navigation/native'
  import { createNativeStackNavigator } from '@react-navigation/native-stack'
  import { ContextProvider } from './src/modules/component/invisual/Context'
@@ -23,10 +21,9 @@
    return (
      <ContextProvider data={DATA}>
        <NavigationContainer>
-         <Stack.Navigator initialRouteName={DATA ? 'JourneyPlanning' : 'DataError'}>
+         <Stack.Navigator initialRouteName='JourneyPlanning'>
            <Stack.Screen name='JourneyPlanning' component={JourneyPlanningScreen}/>
            <Stack.Screen name='StopList' component={StopListScreen}/>
-           <Stack.Screen name='DataError' component={DataErrorScreen}/>
          </Stack.Navigator>
        </NavigationContainer>
      </ContextProvider>
