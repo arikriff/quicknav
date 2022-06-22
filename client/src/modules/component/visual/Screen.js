@@ -1,13 +1,20 @@
-import React, { useEffect } from 'react';
+import React, { useEffect } from 'react'
 import { FlatList, TouchableOpacity } from 'react-native'
-import { getJourneyStopsData } from '../../../info/Data';
-import { fromCollege, toCollege } from '../../../info/Direction';
-import { origin } from '../../../info/StopUse'
-import { getContext } from '../../unvisual/Context'
-import { Column, Row } from '../helper/Container'
+import { Column, Row } from './Container'
+import { MapSection, JourneyPlanningSection } from './Section'
+import { getJourneyStopsData } from '../../info/Data';
+import { fromCollege, toCollege } from '../../info/Direction';
+import { origin } from '../../info/StopUse'
+import { getContext } from '../invisual/Context'
+import styles from '../invisual/styles';
 
+const Screen = ({children}) => (
+  <Column style={styles.screen}>
+    {children}
+  </Column>
+)
 
-const Item = ({stopItem, navigation, stopUse}) => {
+const StopListItem = ({stopItem, navigation, stopUse}) => {
   
   const onPress = () => {
 
@@ -32,7 +39,7 @@ const Item = ({stopItem, navigation, stopUse}) => {
   )
 }
 
-export default ({route}) => {
+export const StopListScreen = ({route}) => {
 
   const context = getContext()
   let navigation, stopUse
@@ -52,7 +59,7 @@ export default ({route}) => {
   })
 
   const renderItem = ({stopItem, navigation, stopUse}) => (
-    <Item
+    <StopListItem
       stopItem={stopItem}
       navigation={navigation}
       stopUse={stopUse}
@@ -60,12 +67,20 @@ export default ({route}) => {
   )
 
   return (
-    <Column>
+    <Screen>
       <FlatList
         data={journeyStopsData}
         renderItem={renderItem}
       />
-    </Column>
+    </Screen>
   )
 }
+
+export const JourneyPlanningScreen = ({navigation}) => (
+	<Screen>
+		<MapSection/>
+		<JourneyPlanningSection navigation={navigation}/>
+	</Screen>
+)
+
 

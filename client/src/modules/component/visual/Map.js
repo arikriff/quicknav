@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import MapView from 'react-native-maps'
-import { getContext } from '../../unvisual/Context'
+import { getContext } from '../invisual/Context'
+import { styles } from '../invisual/styles'
 
 export default () => {
 
@@ -19,6 +20,7 @@ export default () => {
     <MapView
       region={region}
       onRegionChange={onRegionChange}
+      style={styles.map}
     >
     </MapView>
   )

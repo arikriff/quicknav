@@ -1,10 +1,9 @@
 import React from 'react'
 import { TextInput } from 'react-native'
-import { getContext } from '../../unvisual/Context'
-import { origin } from '../../../info/StopUse'
-
-import { fromCollege } from '../../../info/Direction'
-import styles from '../../unvisual/styles'
+import { getContext } from '../invisual/Context'
+import { origin } from '../../info/StopUse'
+import { fromCollege } from '../../info/Direction'
+import styles from '../invisual/styles'
 
 export default ({navigation, stopUse, collegeStopName}) => {
 
@@ -28,7 +27,8 @@ export default ({navigation, stopUse, collegeStopName}) => {
 					context.state.stop ? context.state.stop.name : ''
 				)
 			}
-			onPressIn={() => {navigation.navigate('StopList', {navigation, stopUse})}}
+			onPressIn={onPressIn}
+			style={styles.textInput}
 		/>
 	)
 }

@@ -4,17 +4,17 @@ import { defaultDirection } from '../../info/Direction'
 const Context = React.createContext(null)
 export const getContext = () => React.useContext(Context)
 
-export const ContextProvider = props => {
+export const ContextProvider = ({data, children}) => {
 
   const [state, setState] = useState({
-    data: props.data,
+    data,
     direction: defaultDirection,
     stopId: null
   })
 
   return (
     <Context.Provider value={{state, setState}}>
-      {props.children}
+      {children}
     </Context.Provider>
   )
   
