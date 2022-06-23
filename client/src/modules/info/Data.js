@@ -6,12 +6,9 @@ const stops = require('../../db/stops.json')
 
 export default () => ({line, route, stops})
 
-export const getStopFeature = (id, stopFeatures) => {
-  console.log(`in getStopFeature --> id=${id} stopFeatures=${stopFeatures}\n\n`)
-  return (
-    stopFeatures.find(stop => stop.properties.id == id)
-  )
-}
+export const getStopFeature = (id, stopFeatures) => (
+  stopFeatures.find(stop => stop.properties.id == id)
+)
 	
 export const getStopInLine = (id, lineStops) => {
 
@@ -40,17 +37,11 @@ export const getStopInLine = (id, lineStops) => {
 }
 
 export const getCollegeStopInLine = lineStops => {
-
-  console.log(`in getCollegeStopInLine --> lineStops=${lineStops}\n\n`)
   const id = lineStops.find(stop => stop.use.college).id
-
   return getStopInLine(id, lineStops)
-
 }
 
 export const getStopData = (stopInLine, stopFeature) => {
-
-  console.log(`stopInLine: ${stopInLine}\n\nstopFeature: ${stopFeature}\n\n`)
 
   return {
     id: stopFeature.properties.id,
@@ -73,8 +64,6 @@ export const getStopDataById = (id, lineStops, stopFeatures) => {
 
 export const getCollegeStopData = (lineStops, stopFeatures) => {
 
-  console.log(`in getCollegeStopData --> lineStops=${lineStops} stopFeatures = ${stopFeatures}\n\n`)
-
   const stopInLine = getCollegeStopInLine(lineStops)
   const stopFeature = getStopFeature(stopInLine.id, stopFeatures)
 
@@ -84,20 +73,25 @@ export const getCollegeStopData = (lineStops, stopFeatures) => {
 
 export const getJourneyStopsData = (lineStops, stopFeatures, stopUse) => {
 
-  let journeystopsData = []
+  let journeyStopsData = []
   
-  const journeyLineStops = lineStops.filter(stop =>
-    !stop.use.college &&
-    stopUse === origin ? stop.use.origin : stop.use.destination
-  )
+  const journeyLineStops = lineStops.filter(stop => {
+    
+    return (
+      !(stop.use.college) &&
+      (stopUse === origin ? stop.use.origin : stop.use.destination)
+    )
+  })
   
   journeyLineStops.forEach(stop => {
-    journeyLineStops.push({
+
+    journeyStopsData.push({
       id: stop.id,
-      name: getStopFeature(stop.id, stopFeatures).name
+      name: getStopFeature(stop.id, stopFeatures).properties.name
     })
+    
   })
 
-  return journeyLineStops
+  return journeyStopsData
 
 }

@@ -1,11 +1,8 @@
 import React, { useState } from 'react'
 import MapView from 'react-native-maps'
-import { getContext } from '../invisual/Context'
-import { styles } from '../invisual/styles'
+import styles from '../invisual/styles'
 
 export default () => {
-
-  const context = getContext()
 
   const [region, setRegion] = useState({
     latitude: 31.791840951947094,
@@ -20,7 +17,7 @@ export default () => {
     <MapView
       region={region}
       onRegionChange={onRegionChange}
-      style={styles.map}
+      style={[styles.lineMap, styles.visual]}
     >
     </MapView>
   )

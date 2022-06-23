@@ -13,8 +13,8 @@ export default StyleSheet.create({
 		direction: 'rtl',
 	},
 
-	screen: {
-		padding: 5
+	visual: {
+		padding: 4
 	},
 
 	section: {
@@ -22,23 +22,15 @@ export default StyleSheet.create({
 		width: '100%'
 	},
 
-	map: {
+	lineMap: {
 		height: '100%',
 		width: '100%'
 	},
 
-	textInput: {
+	componentInColumn: {
 		height: 'auto',
 		width: '100%'
 	},
 
-	button: {
-		height: 'auto',
-		width: '100%'
-	},
-
-	visual: {
-		margin: 5
-	}
 
 })

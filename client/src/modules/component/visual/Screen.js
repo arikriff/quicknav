@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react'
-import { FlatList, TouchableOpacity } from 'react-native'
+import React from 'react'
+import { FlatList, TouchableOpacity, Text } from 'react-native'
 import { Column, Row } from './Container'
 import { MapSection, JourneyPlanningSection } from './Section'
 import { getJourneyStopsData } from '../../info/Data';
@@ -9,19 +9,21 @@ import { getContext } from '../invisual/Context'
 import styles from '../invisual/styles';
 
 const Screen = ({children}) => (
-  <Column style={styles.screen}>
+  <Column style={styles.visual}>
     {children}
   </Column>
 )
 
 const StopListItem = ({stopItem, navigation, stopUse}) => {
+
+  const context = getContext()
   
   const onPress = () => {
 
     context.setState({
       data: context.state.data,
       direction: stopUse === origin ? toCollege : fromCollege,
-      stopId: stopItem.id
+      stop: stopItem
     })
 
     navigation.goBack()
@@ -29,9 +31,12 @@ const StopListItem = ({stopItem, navigation, stopUse}) => {
   }
 
   return (
-    <TouchableOpacity onPress={onPress}>
-      <Row>
-        <Text>
+    <TouchableOpacity
+      onPress={onPress}
+      style={[styles.componentInColumn, styles.visual]}
+    >
+      <Row style={styles.componentInColumn}>
+        <Text style={styles.visual}>
           {stopItem.name}
         </Text>
       </Row>
@@ -39,28 +44,14 @@ const StopListItem = ({stopItem, navigation, stopUse}) => {
   )
 }
 
-export const StopListScreen = ({route}) => {
+export const StopListScreen = ({navigation, route}) => {
 
   const context = getContext()
-  let navigation, stopUse
-  let journeyStopsData
+  const stopUse = route.params.stopUse
 
-  useEffect(() => {
-
-    navigation = route.params.navigation
-    stopUse = route.params.stopUse
-
-    journeyStopsData = getJourneyStopsData(
-      context.state.data.line.stops,
-      context.state.data.stops.features,
-      stopUse
-    )
-
-  })
-
-  const renderItem = ({stopItem, navigation, stopUse}) => (
+  const renderItem = ({item}) => (
     <StopListItem
-      stopItem={stopItem}
+      stopItem={item}
       navigation={navigation}
       stopUse={stopUse}
     />
@@ -69,8 +60,13 @@ export const StopListScreen = ({route}) => {
   return (
     <Screen>
       <FlatList
-        data={journeyStopsData}
+        data={getJourneyStopsData (
+          context.state.data.line.stops,
+          context.state.data.stops.features,
+          stopUse
+        )}
         renderItem={renderItem}
+        style={styles.viewInColumn}
       />
     </Screen>
   )

@@ -5,6 +5,7 @@ import JourneyTextInput from './JourneyTextInput'
 import { origin, destination } from '../../info/StopUse'
 import { getContext } from '../invisual/Context'
 import { getCollegeStopData } from '../../info/Data'
+import LineMap from './LineMap'
 
 const Section = ({children}) => (
   <Column style={styles.section}>
@@ -14,7 +15,7 @@ const Section = ({children}) => (
 
 export const MapSection = () => (
   <Section>
-    <Map/>
+    <LineMap/>
   </Section>
 )
 
