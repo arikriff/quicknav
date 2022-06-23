@@ -6,6 +6,7 @@ import { origin, destination } from '../../info/StopUse'
 import { getContext } from '../invisual/Context'
 import { getCollegeStopData } from '../../info/Data'
 import LineMap from './LineMap'
+import { Button } from 'react-native'
 
 const Section = ({children}) => (
   <Column style={styles.section}>
@@ -41,6 +42,10 @@ export const JourneyPlanningSection = ({navigation}) => {
 				navigation={navigation}
 				stopUse={destination}
 				collegeStopName={collegeStopName}
+			/>
+			<Button
+				title='נווט'
+				style={[styles.visual, styles.componentInColumn]}
 			/>
 		</Section>
 	)

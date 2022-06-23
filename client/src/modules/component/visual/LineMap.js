@@ -1,6 +1,9 @@
 import React, { useState } from 'react'
-import MapView from 'react-native-maps'
+import MapView, { Geojson } from 'react-native-maps'
 import styles from '../invisual/styles'
+
+const route = require('../../../db/route.json')
+const stops = require('../../../db/stops.json')
 
 export default () => {
 
@@ -19,6 +22,15 @@ export default () => {
       onRegionChange={onRegionChange}
       style={[styles.lineMap, styles.visual]}
     >
+      <Geojson
+        geojson={route}
+        strokeColor='green'
+        strokeWidth={2}
+      />
+      <Geojson
+        geojson={stops}
+        color='green'
+      />
     </MapView>
   )
 }
