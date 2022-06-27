@@ -108,12 +108,12 @@ export const getNextTrips = (stopId, direction) => {
   const now = moment()
   const trafficToday = getTrafficToday(now)
 
-  const journeyIndexes = getJourneyIndexes(stopId, direction)
-  const estimatedTripIndex = getEstimatedTripIndex(journeyIndexes.origin, now)
+  const {originIndex, destinationIndex} = getJourneyIndexes(stopId, direction)
+  const estimatedTripIndex = getEstimatedTripIndex(originIndex, now)
 
   const MAX_TRIPS_NUM = 4
 
-  let nextTrips = []
+  let trips = []
 
   for (
     let i = estimatedTripIndex;
@@ -121,21 +121,14 @@ export const getNextTrips = (stopId, direction) => {
     i--
   ) {
 
-    let stopTime = getArrivalTime (
-
-      getMoment(line.tripTimes[estimatedTripIndex]),
-
-      {
-        origin: 0,
-        destination: journeyIndexes.origin
-      },
-
+    const stopTime = getOriginArrivalTime (
+      estimatedTripIndex,
+      originIndex,
       trafficToday
     )
 
-    if (stopTime.isBefore(now)) break
-
-    nextTrips = [{departure: stopTime}, ...nextTrips]
+    if (!stopTime) break
+    trips = [{departure: stopTime}, ...nextTrips]
 
   }
 
@@ -144,26 +137,56 @@ export const getNextTrips = (stopId, direction) => {
     i < line.tripTimes.length && nextTrips.length < MAX_TRIPS_NUM;
     i++
   ) {
-
-    let stopTime = getArrivalTime (
-
-      getMoment(line.tripTimes[estimatedTripIndex]),
-
-      {
-        origin: 0,
-        destination: journeyIndexes.origin
-      },
-
+    
+    const stopTime = getOriginArrivalTime (
+      estimatedTripIndex,
+      originIndex,
       trafficToday
     )
 
+    if (!stopTime) break
     nextTrips.push({departure: stopTime})
 
   }
 
-  nextTrips.forEach(trip => )
+  trips.forEach(trip => {
+    
+    trip.arrival = getArrivalTime (
 
+      trip.departure,
+
+      {
+        origin: originIndex,
+        destination: destinationIndex
+      },
+
+      trafficToday
+
+    )
+
+  })
+
+  return trips
   
+}
+
+const getOriginArrivalTime = (estimatedTripIndex, originIndex, trafficToday) => {
+
+  const stopTime = getArrivalTime (
+
+    getMoment(line.tripTimes[estimatedTripIndex]),
+
+    {
+      origin: 0,
+      destination: originIndex
+    },
+
+    trafficToday
+  )
+
+  if (stopTime.isBefore(now)) return undefined
+  return stopTime
+
 }
 
 const getJourneyIndexes = (stopId, direction) => {
