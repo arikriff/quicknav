@@ -7,7 +7,6 @@ export const getContext = () => React.useContext(Context)
 export const ContextProvider = ({data, children}) => {
 
   const [state, setState] = useState({
-    data,
     direction: defaultDirection,
     stopId: null
   })

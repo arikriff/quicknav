@@ -21,7 +21,6 @@ const StopListItem = ({stopItem, navigation, stopUse}) => {
   const onPress = () => {
 
     context.setState({
-      data: context.state.data,
       direction: stopUse === origin ? toCollege : fromCollege,
       stop: stopItem
     })
@@ -36,7 +35,7 @@ const StopListItem = ({stopItem, navigation, stopUse}) => {
       style={[styles.componentInColumn, styles.visual]}
     >
       <Row style={styles.componentInColumn}>
-        <Text style={styles.visual}>
+        <Text style={[styles.visual, styles.stopItemText]}>
           {stopItem.name}
         </Text>
       </Row>
@@ -60,12 +59,9 @@ export const StopListScreen = ({navigation, route}) => {
   return (
     <Screen>
       <FlatList
-        data={getJourneyStopsData (
-          context.state.data.line.stops,
-          context.state.data.stops.features,
-          stopUse
-        )}
+        data={getJourneyStopsData(stopUse)}
         renderItem={renderItem}
+        keyboardShouldPersistTaps='handled'
         style={styles.viewInColumn}
       />
     </Screen>

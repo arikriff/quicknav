@@ -32,5 +32,22 @@ export default StyleSheet.create({
 		width: '100%'
 	},
 
+	textInput: {
+		color: 'black',
+	},
+
+	stopItemText: {
+		color: 'green'
+	},
+
+	screenHeader: {
+		backgroundColor: 'green'
+	},
+
+	screenHeaderTitle: {
+		fontWeight: 'bold',
+		color: 'white'
+	}
+
 
 })

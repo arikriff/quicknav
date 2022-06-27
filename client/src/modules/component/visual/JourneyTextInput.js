@@ -21,7 +21,8 @@ export default ({navigation, stopUse, collegeStopName}) => {
 				(context.state.stop ? context.state.stop.name : '')
 			}
 			onPressIn={onPressIn}
-			style={[styles.componentInColumn, styles.visual]}
+			style={[styles.componentInColumn, styles.visual, styles.textInput]}
+			placeholderTextColor={'gray'}
 		/>
 	)
 }
