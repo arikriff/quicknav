@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import MapView, { Geojson } from 'react-native-maps'
-import { getRouteData, getStopData } from '../../info/Data'
+import { getRouteData, getStopData } from '../../info/query/StopQuery'
 import styles from '../invisual/styles'
 
 export default () => {

@@ -1,11 +1,13 @@
+
 import { toCollege } from './Direction'
-import { destination, origin } from './StopUse'
+import { origin } from './StopUse'
+import moment from 'moment'
 
 const line = require('../../db/line.json')
 const route = require('../../db/route.json')
 const stops = require('../../db/stops.json')
 const traffic = require('../../db/traffic.json')
-const moment = require('moment')
+
 
 export default () => ({line, route, stops, traffic})
 
@@ -101,7 +103,6 @@ export const getJourneyStopsData = stopUse => {
   return journeyStopsData
 
 }
-
 
 export const getNextTrips = (stopId, direction) => {
 

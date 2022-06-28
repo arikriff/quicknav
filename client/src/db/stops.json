@@ -39,6 +39,34 @@
     {
       "type": "Feature",
       "properties": {
+        "id": 386,
+        "name": "עמירם סיוון/יעקוב שריבוים"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.193651,
+          31.773139
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 463,
+        "name": "בנייני האומה/שדרות שז''ר"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.203367,
+          31.787718
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "id": 800,
         "name": "בנייני האומה/הנשיא השישי"
       },
@@ -487,6 +515,34 @@
     {
       "type": "Feature",
       "properties": {
+        "id": 6244,
+        "name": "תחנת רקל''ה החלוץ/פרבשטיין"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.191922,
+          31.783033
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 6307,
+        "name": "עמירם סיוון/יעקב שריבוים"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.19355,
+          31.77311
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "id": 9898,
         "name": "עמירם סיוון/ניסן הרפז"
       },
@@ -565,62 +621,6 @@
         "coordinates": [
           35.191479,
           31.774255
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": 6244,
-        "name": "תחנת רקל''ה החלוץ/פרבשטיין"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          35.191922,
-          31.783033
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": 6307,
-        "name": "עמירם סיוון/יעקב שריבוים"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          35.19355,
-          31.77311
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": 386,
-        "name": "עמירם סיוון/יעקוב שריבוים"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          35.193651,
-          31.773139
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": 463,
-        "name": "בנייני האומה/שדרות שז''ר"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          35.203367,
-          31.787718
         ]
       }
     }

@@ -2,7 +2,7 @@ import React from 'react'
 import { FlatList, TouchableOpacity, Text } from 'react-native'
 import { Column, Row } from './Container'
 import { MapSection, JourneyPlanningSection } from './Section'
-import { getJourneyStopsData } from '../../info/Data';
+import { getOptionalStops } from '../../info/query/StopQuery';
 import { fromCollege, toCollege } from '../../info/Direction';
 import { origin } from '../../info/StopUse'
 import { getContext } from '../invisual/Context'
@@ -59,7 +59,7 @@ export const StopListScreen = ({navigation, route}) => {
   return (
     <Screen>
       <FlatList
-        data={getJourneyStopsData(stopUse)}
+        data={getOptionalStops(stopUse)}
         renderItem={renderItem}
         keyboardShouldPersistTaps='handled'
         style={styles.viewInColumn}
