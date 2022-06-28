@@ -43,6 +43,9 @@ export const JourneyPlanningSection = ({navigation}) => {
 				title='נווט'
 				style={[styles.visual, styles.componentInColumn]}
 			/>
+			<Column>
+			</Column>
+			
 		</Section>
 	)
 
