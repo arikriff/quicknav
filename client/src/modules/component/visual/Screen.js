@@ -1,3 +1,5 @@
+78 lines (63 sloc)  1.73 KB
+
 import React from 'react'
 import { FlatList, TouchableOpacity, Text } from 'react-native'
 import { Column, Row } from './Container'
@@ -74,5 +76,3 @@ export const JourneyPlanningScreen = ({navigation}) => (
 		<JourneyPlanningSection navigation={navigation}/>
 	</Screen>
 )
-
-
