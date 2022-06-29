@@ -1,5 +1,3 @@
-78 lines (63 sloc)  1.73 KB
-
 import React from 'react'
 import { FlatList, TouchableOpacity, Text } from 'react-native'
 import { Column, Row } from './Container'
@@ -24,7 +22,9 @@ const StopListItem = ({stopItem, navigation, stopUse}) => {
 
     context.setState({
       direction: stopUse === origin ? toCollege : fromCollege,
-      stop: stopItem
+      stop: stopItem,
+      nextTrips: context.state.nextTrips,
+      now: context.state.now
     })
 
     navigation.goBack()

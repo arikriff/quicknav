@@ -7,6 +7,10 @@ import { getCollegeStopData } from '../../info/query/StopQuery'
 import LineMap from './LineMap'
 import { Button } from 'react-native'
 import { ScrollView } from 'react-native-gesture-handler'
+import { getContext } from '../invisual/Context'
+import { getNextTrips } from '../../info/Data'
+import moment from 'moment'
+import NextTripsView from './NextTripsView'
 
 const Section = ({children}) => (
   <Column style={styles.section}>
@@ -25,6 +29,8 @@ export const JourneyPlanningSection = ({navigation}) => {
 	const collegeStopData = getCollegeStopData()
 	const collegeStopName = collegeStopData.name
 
+	const context = getContext()
+
 	return (
 		<Section>
 			<ScrollView keyboardShouldPersistTaps='handled'>
@@ -42,10 +48,14 @@ export const JourneyPlanningSection = ({navigation}) => {
 			<Button
 				title='נווט'
 				style={[styles.visual, styles.componentInColumn]}
+				onPress={() => context.setState({
+					direction: context.state.direction,
+					stop: context.state.stop,
+					nextTrips: getNextTrips(context.state.stop.id, context.state.direction),
+					now: moment()
+				})}
 			/>
-			<Column>
-			</Column>
-			
+			<NextTripsView/>
 		</Section>
 	)
 

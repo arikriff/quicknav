@@ -47,7 +47,55 @@ export default StyleSheet.create({
 	screenHeaderTitle: {
 		fontWeight: 'bold',
 		color: 'white'
+	},
+
+	nextTrip: {
+		fontWeight: 'bold',
+		fontSize: 10
+	},
+
+	duration: {
+		fontSize: 10
+	},
+
+	nextDepartures: {
+		fontSize: 8
+	},
+
+	fromCollege: {
+		color: 'black'
+	},
+
+	toCollege: {
+		color: 'green'
+	},
+
+	noTrips: {
+		fontSize: 10,
+		color: 'black'
+	},
+
+	nextDepartureSeparator: {
+		color: 'black',
+	},
+
+	nextTripsSaparator: {
+		paddingEnd: 4
+	},
+
+	lineNameView: {
+		color: 'green',
+		padding: 2,
+		height: 'auto',
+		width: 'auto',
+		justifyContent: 'center',
+		alignItems: 'center'
+	},
+
+	lineNameText: {
+		fontWeight: 'bold',
+		color: 'white',
+		fontSize: 10
 	}
-
-
+	
 })

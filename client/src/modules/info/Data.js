@@ -14,6 +14,8 @@ export default () => ({line, route, stops, traffic})
 export const getRouteData = () => route
 export const getStopsData = () => stops
 
+export const getLineName = () => line.name
+
 export const getStopFeature = id => (
   stops.features.find(stop => stop.properties.id == id)
 )
@@ -104,9 +106,8 @@ export const getJourneyStopsData = stopUse => {
 
 }
 
-export const getNextTrips = (stopId, direction) => {
+export const getNextTrips = (stopId, direction, now) => {
 
-  const now = moment()
   const trafficToday = getTrafficToday(now)
 
   const {originIndex, destinationIndex} = getJourneyIndexes(stopId, direction)
@@ -114,7 +115,7 @@ export const getNextTrips = (stopId, direction) => {
 
   const MAX_TRIPS_NUM = 4
 
-  let trips = []
+  let nextTrips = []
 
   for (
     let i = estimatedTripIndex;
@@ -129,7 +130,7 @@ export const getNextTrips = (stopId, direction) => {
     )
 
     if (!stopTime) break
-    trips = [{departure: stopTime}, ...nextTrips]
+    nextTrips = [{departure: stopTime}, ...nextTrips]
 
   }
 
