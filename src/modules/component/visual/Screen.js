@@ -2,7 +2,7 @@ import React from 'react'
 import { FlatList, TouchableOpacity, Text } from 'react-native'
 import { Column, Row } from './Container'
 import { MapSection, JourneyPlanningSection } from './Section'
-import { getOptionalStops } from '../../info/query/StopQuery';
+import { getOptionalStops } from '../../info/Data';
 import { fromCollege, toCollege } from '../../info/Direction';
 import { origin } from '../../info/StopUse'
 import { getContext } from '../invisual/Context'

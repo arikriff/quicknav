@@ -3,7 +3,7 @@ import styles from '../invisual/styles'
 import { Column } from './Container'
 import JourneyTextInput from './JourneyTextInput'
 import { origin, destination } from '../../info/StopUse'
-import { getCollegeStopData } from '../../info/query/StopQuery'
+import { getCollegeStopData } from '../../info/Data'
 import LineMap from './LineMap'
 import { Button, ScrollView } from 'react-native'
 import { getContext } from '../invisual/Context'
@@ -47,12 +47,27 @@ export const JourneyPlanningSection = ({navigation}) => {
 			<Button
 				title='נווט'
 				style={[styles.visual, styles.componentInColumn]}
-				onPress={() => context.setState({
-					direction: context.state.direction,
-					stop: context.state.stop,
-					nextTrips: getNextTrips(context.state.stop.id, context.state.direction),
-					now: moment()
-				})}
+				onPress={() => {
+					
+					if (context.state.stop) {
+
+						const now = moment()
+
+						const nextTrips = getNextTrips (
+							context.state.stop.id,
+							context.state.direction,
+							now
+						)
+						
+						context.setState({
+							direction: context.state.direction,
+							stop: context.state.stop,
+							nextTrips: nextTrips,
+							now
+						})
+
+					}
+				}}
 			/>
 			<NextTripsView/>
 		</Section>

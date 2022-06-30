@@ -11,8 +11,8 @@ const traffic = require('../../db/traffic.json')
 
 export default () => ({line, route, stops, traffic})
 
-export const getRouteData = () => route
-export const getStopsData = () => stops
+export const getRoute = () => route
+export const getStops = () => stops
 
 export const getLineName = () => line.name
 
@@ -52,7 +52,7 @@ export const getCollegeStopInLine = () => {
 }
 
 export const getStopData = (stopInLine, stopFeature) => {
-
+  
   return {
     id: stopFeature.properties.id,
     name: stopFeature.properties.name,
@@ -60,15 +60,6 @@ export const getStopData = (stopInLine, stopFeature) => {
     college: stopInLine.college,
     stopsInTrip: stopInLine.stopsInTrip
   }
-
-}
-
-export const getStopDataById = id => {
-
-  const stopInLine = getStopInLine(id)
-  const stopFeature = getStopFeature(id)
-
-  return getStopData(stopInLine, stopFeature)
 
 }
 
@@ -81,7 +72,7 @@ export const getCollegeStopData = () => {
   
 }
 
-export const getJourneyStopsData = stopUse => {
+export const getOptionalStops = stopUse => {
 
   let journeyStopsData = []
   
@@ -108,13 +99,15 @@ export const getJourneyStopsData = stopUse => {
 
 export const getNextTrips = (stopId, direction, now) => {
 
-  const trafficToday = getTrafficToday(now)
-
-  const {originIndex, destinationIndex} = getJourneyIndexes(stopId, direction)
-  const estimatedTripIndex = getEstimatedTripIndex(originIndex, now)
-
   const MAX_TRIPS_NUM = 4
 
+  const trafficToday = getTrafficToday(now)
+  const indexes = getJourneyIndexes(stopId, direction)
+
+  const originIndex = indexes.origin
+  const destinationIndex = indexes.destination
+
+  const estimatedTripIndex = getEstimatedTripIndex(originIndex, now)
   let nextTrips = []
 
   for (
@@ -126,7 +119,8 @@ export const getNextTrips = (stopId, direction, now) => {
     const stopTime = getOriginArrivalTime (
       estimatedTripIndex,
       originIndex,
-      trafficToday
+      trafficToday,
+      now
     )
 
     if (!stopTime) break
@@ -143,7 +137,8 @@ export const getNextTrips = (stopId, direction, now) => {
     const stopTime = getOriginArrivalTime (
       estimatedTripIndex,
       originIndex,
-      trafficToday
+      trafficToday,
+      now
     )
 
     if (!stopTime) break
@@ -172,11 +167,11 @@ export const getNextTrips = (stopId, direction, now) => {
   
 }
 
-const getOriginArrivalTime = (estimatedTripIndex, originIndex, trafficToday) => {
+const getOriginArrivalTime = (estimatedTripIndex, originIndex, trafficToday, now) => {
 
   const stopTime = getArrivalTime (
 
-    getMoment(line.tripTimes[estimatedTripIndex]),
+    getMoment(line.tripTimes[estimatedTripIndex], now),
 
     {
       origin: 0,
@@ -193,14 +188,17 @@ const getOriginArrivalTime = (estimatedTripIndex, originIndex, trafficToday) => 
 
 const getJourneyIndexes = (stopId, direction) => {
 
-  if (direction === toCollege) return {
+  if (direction === toCollege){
 
-    origin: line.stops.findIndex (
-      stop => (stop.id == stopId && stop.use.origin === true)
-    ),
+    return {
 
-    destination: line.stops.length - 1
+      origin: line.stops.findIndex (
+        stop => (stop.id == stopId && stop.use.origin === true)
+      ),
 
+      destination: line.stops.length - 1
+
+    }
   }
 
   else {

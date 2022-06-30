@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
+import React from 'react'
 import MapView, { Geojson } from 'react-native-maps'
-import { getRouteData, getStopData } from '../../info/query/StopQuery'
+import { getRoute, getStops } from '../../info/Data'
 import styles from '../invisual/styles'
 
 export default () => {
@@ -18,12 +18,12 @@ export default () => {
       style={[styles.lineMap, styles.visual]}
     >
       <Geojson
-        geojson={getRouteData()}
+        geojson={getRoute()}
         strokeColor='green'
         strokeWidth={5}
       />
       <Geojson
-        geojson={getStopData()}
+        geojson={getStops()}
         color='green'
       />
     </MapView>
