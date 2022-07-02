@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { TextInput } from 'react-native'
 import { getContext } from '../invisual/Context'
 import { origin } from '../../info/StopUse'
@@ -9,7 +9,7 @@ export default ({navigation, stopUse, collegeStopName}) => {
 
 	let context = getContext()
 
-	const onPressIn = () => {navigation.navigate('StopList', {stopUse})}
+	const onPressIn = () => {navigation.navigate('StopList', { stopUse })}
 	
 	return (
 		<TextInput

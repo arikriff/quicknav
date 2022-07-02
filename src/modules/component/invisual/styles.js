@@ -51,15 +51,17 @@ export default StyleSheet.create({
 
 	nextTrip: {
 		fontWeight: 'bold',
-		fontSize: 10
+		fontSize: 18,
+		color: 'black'
 	},
 
 	duration: {
-		fontSize: 10
+		marginStart: 4,
+		fontSize: 18
 	},
 
 	nextDepartures: {
-		fontSize: 8
+		fontSize: 16
 	},
 
 	fromCollege: {
@@ -94,8 +96,8 @@ export default StyleSheet.create({
 
 	lineNameText: {
 		fontWeight: 'bold',
-		color: 'white',
-		fontSize: 10
+		color: 'black',
+		fontSize: 18
 	}
 	
 })

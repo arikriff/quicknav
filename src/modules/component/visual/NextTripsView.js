@@ -1,5 +1,5 @@
 import React from 'react'
-import moment from 'moment'
+import moment from 'moment-timezone'
 import { FlatList, Text } from 'react-native'
 import { getLineName } from '../../info/Data'
 import { toCollege } from '../../info/Direction'
@@ -15,11 +15,14 @@ const NoTrips = () => (
   </Row>
 )
 
-const DepartureItem = ({item, direction}) => (
-  <Text style={[styles.nextDepartures, getDirectionStyle(direction)]}>
-    {item.departure}
-  </Text>
-)
+const DepartureItem = ({item, direction}) => {
+
+  return (
+    <Text style={[styles.nextDepartures, getDirectionStyle(direction)]}>
+      {item.departure}
+    </Text>
+  )
+}
 
 const DurationText = () => {
 
@@ -27,23 +30,11 @@ const DurationText = () => {
 
   return (
     <Text
-      style={[
-        styles.duration,
-        getDirectionStyle(context.state.direction)
-      ]}
+      style={{ ...styles.duration, ...getDirectionStyle(context.state.direction) }}
     >
-      {
-        'במשך: ' +
-        (
-          moment.duration (
-            context.state.nextTrips[0].arrival.diff(
-              context.state.nextTrips[0].departure
-            )
-          ).asMinutes
-        ) +
-        ' דק\''
-      }
+      {`במשך: ${moment.duration(context.state.nextTrips[0].arrival.diff(context.state.nextTrips[0].departure)).asMinutes()} דק\'`}
     </Text>
+  
   )
 }
 
@@ -64,15 +55,16 @@ const JourneyTimes = () => {
       ]}
     >
       {
-        context.state.nextTrips[0].departure.format('H:mm') +
+        context.state.nextTrips[0].departure.format('HH:mm') +
         ' - ' +
-        context.state.nextTrips[0].arrival.format('H:mm')
+        context.state.nextTrips[0].arrival.format('HH:mm')
       }
     </Text>
   )
 
   
 }
+
 
 const NextDepartureSeparator = ({children}) => (
   <Text
@@ -87,16 +79,33 @@ const NextDepartureSeparator = ({children}) => (
 
 )
 
+const MoreTripsTitle = () => (
+  <NextDepartureSeparator>
+    נסיעות נוספות:
+  </NextDepartureSeparator>
+)
+
+const Comma = () => (
+  <NextDepartureSeparator>
+    ,
+  </NextDepartureSeparator>
+)
+
 const Trips = () => {
 
   const context = getContext()
 
-  const renderItem = item => (
-    <DepartureItem
-      item={item}
-      direction={context.state.direction}
-    />
-  )
+  const renderItem = item => {
+
+    return (
+      <DepartureItem
+        item={item}
+        direction={context.state.direction}
+      />
+    )
+  }
+
+  
 
   return (
     <Column>
@@ -111,33 +120,22 @@ const Trips = () => {
         <JourneyTimes/>
         <DurationText/>
       </Row>
-      {
-        context.state.nextTrips.length > 1 ?
-        (
-          <Row style={styles.visual}>
-            <FlatList
-
-              data={context.state.nextTrips.slice(1)}
-              renderItem={renderItem}
-              horizontal={true}
-
-              ListFooterComponent={
-                <NextDepartureSeparator>
-                  נסיעות נוספות:
-                </NextDepartureSeparator>
-              }
-
-              ItemSeparatorComponent={
-                <NextDepartureSeparator>
-                  ,
-                </NextDepartureSeparator>
-              }
-
-            />
-          </Row>
-        ) :
-        null
-      }
+      <Row>
+        <Text style={styles.nextTrip}>
+          הנסיעות הבאות:{`\n${context.state.nextTrips.slice(1).map(trip => `${trip.departure.format('HH:mm')} במשך: ${moment.duration(trip.arrival.diff(trip.departure)).asMinutes()} דק\'`).join('\n')}`}
+        </Text>
+      </Row>
+      {/* {context.state.nextTrips.length > 1 &&
+        <Row style={styles.visual}>
+          <FlatList
+            data={context.state.nextTrips.slice(1)}
+            renderItem={renderItem}
+            horizontal={true}
+            ListFooterComponent={MoreTripsTitle}
+            ItemSeparatorComponent={Comma}
+          />
+        </Row>
+      } */}
     </Column>
   )
 }
@@ -151,7 +149,7 @@ export default () => {
       {
         context.state.nextTrips === undefined ?
         null :
-        (context.state.nextTrips === [] ? <NoTrips/> : <Trips/>)
+        (context.state.nextTrips.length > 0 ? <Trips/> : <NoTrips/>)
       }
     </Column>
 

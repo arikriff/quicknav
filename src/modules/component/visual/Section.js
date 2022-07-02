@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styles from '../invisual/styles'
 import { Column } from './Container'
 import JourneyTextInput from './JourneyTextInput'
@@ -9,7 +9,8 @@ import { Button, ScrollView } from 'react-native'
 import { getContext } from '../invisual/Context'
 import { getNextTrips } from '../../info/Data'
 import NextTripsView from './NextTripsView'
-import moment from 'moment'
+import moment from 'moment-timezone'
+moment.tz('Israel');
 
 const Section = ({children}) => (
   <Column style={styles.section}>
@@ -30,6 +31,25 @@ export const JourneyPlanningSection = ({navigation}) => {
 
 	const context = getContext()
 
+	const onPress = () => {
+					
+		if (context.state.stop) {
+			const nextTrips = getNextTrips(
+				context.state.stop.id,
+				context.state.direction
+			)
+			
+			context.setState({
+				direction: context.state.direction,
+				stop: context.state.stop,
+				nextTrips: nextTrips
+			})
+
+		}
+	}
+
+
+
 	return (
 		<Section>
 			<ScrollView keyboardShouldPersistTaps='handled'>
@@ -47,27 +67,7 @@ export const JourneyPlanningSection = ({navigation}) => {
 			<Button
 				title='נווט'
 				style={[styles.visual, styles.componentInColumn]}
-				onPress={() => {
-					
-					if (context.state.stop) {
-
-						const now = moment()
-
-						const nextTrips = getNextTrips (
-							context.state.stop.id,
-							context.state.direction,
-							now
-						)
-						
-						context.setState({
-							direction: context.state.direction,
-							stop: context.state.stop,
-							nextTrips: nextTrips,
-							now
-						})
-
-					}
-				}}
+				onPress={onPress}
 			/>
 			<NextTripsView/>
 		</Section>

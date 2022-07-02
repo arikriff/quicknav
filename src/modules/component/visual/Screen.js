@@ -21,10 +21,9 @@ const StopListItem = ({stopItem, navigation, stopUse}) => {
   const onPress = () => {
 
     context.setState({
+      ...context.state,
       direction: stopUse === origin ? toCollege : fromCollege,
-      stop: stopItem,
-      nextTrips: context.state.nextTrips,
-      now: context.state.now
+      stop: stopItem
     })
 
     navigation.goBack()
@@ -47,7 +46,6 @@ const StopListItem = ({stopItem, navigation, stopUse}) => {
 
 export const StopListScreen = ({navigation, route}) => {
 
-  const context = getContext()
   const stopUse = route.params.stopUse
 
   const renderItem = ({item}) => (

@@ -1,7 +1,7 @@
 
 import { toCollege } from './Direction'
 import { origin } from './StopUse'
-import moment from 'moment'
+import moment from 'moment-timezone'
 
 const line = require('../../db/line.json')
 const route = require('../../db/route.json')
@@ -97,251 +97,108 @@ export const getOptionalStops = stopUse => {
 
 }
 
-export const getNextTrips = (stopId, direction, now) => {
-
-  const MAX_TRIPS_NUM = 4
-
-  const trafficToday = getTrafficToday(now)
-  const indexes = getJourneyIndexes(stopId, direction)
-
-  const originIndex = indexes.origin
-  const destinationIndex = indexes.destination
-
-  const estimatedTripIndex = getEstimatedTripIndex(originIndex, now)
+// get the next available trips from a given stop and direction.
+export const getNextTrips = (stopId, direction) => {
+  const MAX_TRIPS_NUM = 7
+  const [originIndex, destinationIndex] = getJourneyIndexes(stopId, direction)
+  // const estimatedTripIndex = getEstimatedTripIndex(originIndex, now)
   let nextTrips = []
 
-  for (
-    let i = estimatedTripIndex;
-    i>=0 && nextTrips.length < MAX_TRIPS_NUM;
-    i--
-  ) {
+  // find the next trip from now
+  let nextTripIndex = line.tripTimes.findIndex((_trip, index) =>
+    calculateArrivalTime(0, originIndex, getMoment(line.tripTimes[index])).isSameOrAfter()
+  );
 
-    const stopTime = getOriginArrivalTime (
-      estimatedTripIndex,
-      originIndex,
-      trafficToday,
-      now
-    )
-
-    if (!stopTime) break
-    nextTrips = [{departure: stopTime}, ...nextTrips]
-
+  // add MAX_TRIPS_NUM trips from the trip found
+  for (let i = 0; i < MAX_TRIPS_NUM; i++) {
+    if (nextTripIndex + i == line.tripTimes.length)
+      break;
+    const departure = calculateArrivalTime(0, originIndex, getMoment(line.tripTimes[nextTripIndex + i]));
+    nextTrips.push({
+      departure: departure,
+      arrival: calculateArrivalTime(originIndex, destinationIndex, departure)
+    });
   }
 
-  for (
-    let i = estimatedTripIndex+1;
-    i < line.tripTimes.length && nextTrips.length < MAX_TRIPS_NUM;
-    i++
-  ) {
-    
-    const stopTime = getOriginArrivalTime (
-      estimatedTripIndex,
-      originIndex,
-      trafficToday,
-      now
-    )
-
-    if (!stopTime) break
-    nextTrips.push({departure: stopTime})
-
-  }
-
-  trips.forEach(trip => {
-    
-    trip.arrival = getArrivalTime (
-
-      trip.departure,
-
-      {
-        origin: originIndex,
-        destination: destinationIndex
-      },
-
-      trafficToday
-
-    )
-
-  })
-
-  return trips
-  
-}
-
-const getOriginArrivalTime = (estimatedTripIndex, originIndex, trafficToday, now) => {
-
-  const stopTime = getArrivalTime (
-
-    getMoment(line.tripTimes[estimatedTripIndex], now),
-
-    {
-      origin: 0,
-      destination: originIndex
-    },
-
-    trafficToday
-  )
-
-  if (stopTime.isBefore(now)) return undefined
-  return stopTime
-
+  return nextTrips
 }
 
 const getJourneyIndexes = (stopId, direction) => {
 
   if (direction === toCollege){
 
-    return {
+    return [
 
-      origin: line.stops.findIndex (
+      line.stops.findIndex (
         stop => (stop.id == stopId && stop.use.origin === true)
       ),
 
-      destination: line.stops.length - 1
+      line.stops.length - 1
 
-    }
+    ]
   }
 
   else {
 
-    return {
-
-      origin: 0,
-
-      destination: line.stops.findIndex (
+    return [
+      0,
+      line.stops.findIndex (
         stop => (stop.id == stopId && stop.use.destination === true)
       )
-    }
+    ]
   }
 }
 
-const getEstimatedTripIndex = (stopIndex, now) => {
-
-  let bottom = 0, top = line.tripTimes.length - 1
-  let middle = undefined
-
-  while (bottom < top) {
-
-    middle = top + Math.floor((top - bottom + 1) / 2)
-
-    const estimatedDeparture = now.subtract (
-      moment.duration(line.stops[stopIndex].plannedTime)
-    )
-
-    const tripDeparture = getMoment(line.tripTimes[middle], now)
-
-    if (estimatedDeparture.isSame(tripDeparture)) {
-      return middle
-    }
-
-    if (estimatedDeparture.isBefore(getMoment(line.tripTimes[bottom], now))) {
-      return bottom
-    }
-
-    if (estimatedDeparture.isAfter(getMoment(line.tripTimes[top], now))) {
-      return top
-    }
-
-    if (estimatedDeparture.isBefore(tripDeparture)) {
-      bottom = middle + 1
-    }
-    else {
-      top = middle - 1
-    }
-    
-  }
-
-}
-
-const getArrivalTime = (departureTime, journeyIndexes, trafficToday) => {
-
+// calculates the estimated arrival time with traffic between two stops at a given time.
+const calculateArrivalTime = (originIndex, destinationIndex, departureTime) => {
   let realArrivalTime = departureTime
 
-  for (let i = journeyIndexes.origin; i < journeyIndexes.destination; i++) {
+  for (let i = originIndex; i < destinationIndex; i++) {
+    const originTime = moment.duration(line.stops[i].plannedTime);
+    const destinationTime = moment.duration(line.stops[i+1].plannedTime);
+    const plannedArrivalDuration = destinationTime.clone().subtract(originTime);
+    const plannedArrivalTime = realArrivalTime.clone().add(plannedArrivalDuration)
+    const trafficWindow = getRelevantTrafficWindow(realArrivalTime, plannedArrivalTime)
+    const realtimeArrivalDuration = moment.duration(line.stops[i+1].duration[trafficWindow])
 
-    const arrivalPlannedTime = getPlannedSegmentArrival(realArrivalTime, i)
-    const relevantTraffic = getRelevantTraffic (
-
-      {
-        departure: i == journeyIndexes.origin ? relevantTraffic : undefined,
-        arrival: arrivalPlannedTime
-      },
-
-      trafficToday
-    )
-
-    realArrivalTime = (
-      relevantTraffic ?
-      realArrivalTime.add(moment.duration(line.stops[i+1].duration[relevantTraffic])) :
-      arrivalPlannedTime
-    )
-    
+    realArrivalTime = realArrivalTime.clone().add(trafficWindow ? realtimeArrivalDuration : plannedArrivalDuration)
   }
 
   return realArrivalTime
-  
 }
 
-const getPlannedSegmentArrival = (departureTime, originIndex) => {
-
-  const cumulative = {
-    origin: moment.duration(line.stops[originIndex].plannedTime),
-    destination: moment.duration(line.stops[originIndex+1].plannedTime)
-  }
-
-  const duration = cumulative.arrival.subtract(cumulative.destination)
-  return departureTime.add(duration)
-
-}
-
-const getRelevantTraffic = (journeyTimes, trafficToday) => {
-
-  for (type in trafficToday) {
-
-    for (time in journeyTimes) {
-
-      if (
-        time.isAfter(trafficToday[type].start) &&
-        time.isBefore(trafficToday[type].end)
-      ) {
-        return trafficToday[type]
-      }
-
-    }
-  }
-
-  return undefined
-
-}
-
-const getMoment = (momentStr, now) => {
-
-  let normalized = moment(`${now.format('DD/MM/YYYY')} ${momentStr}`)
-  
-  if (now.get('hour') < 4 && normalized.get('hour') >= 4) {
-    normalized = normalized.subtract(1, 'days')
-  }
-  else if (now.get('hour') >= 4 && normalized.get('hour') < 4) {
-    normalized = normalized.add(1, 'days')
-  }
-
-  return normalized
-
-}
-
-const getTrafficToday = now => {
-
-  let trafficToday = {}
+// check if segment is overlapping with traffic times.
+// if true, return the traffic window name.
+// if false, return undefined.
+const getRelevantTrafficWindow = (departure, arrival) => {
+  let trafficToday = {};
+  let value;
 
   for (let type in traffic) {
-
     trafficToday[type] = {}
+    for (let edge in traffic[type])
+      trafficToday[type][edge] = getMoment(traffic[type][edge]);
 
-    for (let edge in traffic[type]) {
-      trafficToday[type][edge] = getMoment(traffic[type][edge], now)
-    }
-
+    [departure, arrival].find(time => {
+      if (time.isBetween(trafficToday[type].start, trafficToday[type].end))
+        return value = type;
+    });
+    if (value)
+      break;
   }
 
-  return trafficToday
+  return value;
+}
+
+// normalize string entries from the database to moment type
+const getMoment = (momentStr) => {
+
+  const DATE_FORMAT = 'DD/MM/YYYY'
+  const TIME_FORMAT = 'HH:mm:ss'
+
+ return normalized = moment(
+    `${moment().format(DATE_FORMAT)} ${momentStr}`,
+    `${DATE_FORMAT} ${TIME_FORMAT}`
+  )
 
 }

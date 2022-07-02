@@ -6,6 +6,10 @@
       "id": 5929,
       "name": "מכללה להנדסה ירושלים",
       "plannedTime": "00:00:00",
+      "duration": {
+        "morning": "00:00:00",
+        "afternoon": "00:00:00"
+      },
       "use": {
         "college": true,
         "origin": true,
@@ -18,8 +22,7 @@
       "plannedTime": "00:01:00",
       "duration": {
         "morning": "00:01:00",
-        "afternoon": "00:00:00",
-        "evening": "00:00:00"
+        "afternoon": "00:01:00"
       },
       "use": {
         "college": false,
